@@ -105,7 +105,7 @@
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
                                     <img class="img-fluid"
-                                        src="{{URL::asset($vn['thumbnail'])}}"
+                                        src="{{URL::asset('public/'.$vn['thumbnail'])}}"
                                         alt="">
                                 </div>
                                 <div class="featured-content">
@@ -238,7 +238,7 @@
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
                                     <img class="img-fluid"
-                                        src="{{URL::asset($vn['thumbnail'])}}"
+                                        src="{{URL::asset('public/'.$vn['thumbnail'])}}"
                                         alt="">
                                 </div>
                                 <div class="featured-content">

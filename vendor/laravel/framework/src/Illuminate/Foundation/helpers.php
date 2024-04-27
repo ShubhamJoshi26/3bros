@@ -146,7 +146,7 @@ if (! function_exists('asset')) {
      */
     function asset($path, $secure = null)
     {
-        return app('url')->asset('public/'.$path, $secure);
+        return app('url')->asset($path, $secure);
     }
 }
 
@@ -841,7 +841,7 @@ if (! function_exists('secure_asset')) {
      */
     function secure_asset($path)
     {
-        return asset('public/'.$path, true);
+        return asset($path, true);
     }
 }
 

@@ -17,40 +17,40 @@
     <link rel="shortcut icon" href="images/favicon.png" media="all" />
 
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/bootstrap.min.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/bootstrap.min.css')}}" media="all" />
 
     <!-- animate -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/animate.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/animate.css')}}" media="all" />
 
     <!-- owl-carousel -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/owl.carousel.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/owl.carousel.css')}}" media="all" />
 
     <!-- fontawesome -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/font-awesome.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/font-awesome.css')}}" media="all" />
 
     <!-- themify -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/themify-icons.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/themify-icons.css')}}" media="all" />
 
     <!-- flaticon -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/flaticon.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/flaticon.css')}}" media="all" />
 
     <!-- REVOLUTION LAYERS STYLES -->
 
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/revolution/css/layers.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/revolution/css/layers.css')}}" media="all" />
 
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/revolution/css/settings.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/revolution/css/settings.css')}}" media="all" />
 
     <!-- prettyphoto -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/prettyPhoto.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/prettyPhoto.css')}}" media="all" />
 
     <!-- shortcodes -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/shortcodes.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/shortcodes.css')}}" media="all" />
 
     <!-- main -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/main.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/main.css')}}" media="all" />
 
     <!-- responsive -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/responsive.css')}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('public/front/css/responsive.css')}}" media="all" />
 
 </head>
 
@@ -119,7 +119,7 @@
                                     <!-- site-branding -->
                                     <div class="site-branding">
                                         <a class="home-link" href="#" title="planwey" rel="home">
-                                            <img id="logo" class="img-center" src="{{URL::asset('/front/images/logo.png')}}" alt="">
+                                            <img id="logo" class="img-center" src="{{URL::asset('public/front/images/logo.png')}}" alt="">
                                         </a>
                                     </div><!-- site-branding end -->
                                     <!--site-navigation -->
@@ -264,7 +264,7 @@
                             data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
                             data-param8="" data-param9="" data-param10="" data-description="">
 
-                            <img src="{{URL::asset('/front/images/slides/slider-mainbg-004.jpg')}}" alt="" title="slider-mainbg-003" width="1920"
+                            <img src="{{URL::asset('public/front/images/slides/slider-mainbg-004.jpg')}}" alt="" title="slider-mainbg-003" width="1920"
                                 height="915" data-bgposition="center center" data-bgfit="cover"
                                 data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
@@ -362,7 +362,7 @@
                             data-title="We Plan the Best Events" data-param1="" data-param2="" data-param3=""
                             data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                             data-param10="" data-description="">
-                            <img src="{{URL::asset('/front/images/slides/slider-mainbg-003.jpg')}}" alt="" title="slider-mainbg-003" width="1920"
+                            <img src="{{URL::asset('public/front/images/slides/slider-mainbg-003.jpg')}}" alt="" title="slider-mainbg-003" width="1920"
                                 height="915" data-bgposition="center center" data-bgfit="cover"
                                 data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
@@ -546,7 +546,7 @@
                         <div class="col-md-8 col-sm-12 col-xs-12 ttm-footer2-left">
                             <div class="company-info">
                                 <div class="company-logo">
-                                    <img src="{{URL::asset('/front/images/3bros-logo-white-1.png')}}" alt="company-logo">
+                                    <img src="{{URL::asset('public/front/images/3bros-logo-white-1.png')}}" alt="company-logo">
                                 </div>
                                 <div class="company-desc">#3BROS is Delhi NCR Largest Banquet Co. with presence at 100+
                                     stunning venues across Noida, Delhi, and Ghaziabad.
@@ -593,33 +593,33 @@
 
     <!-- Javascript -->
 
-    <script src="{{URL::asset('/front/js/jquery.min.js')}}"></script>
-    <script src="{{URL::asset('/front/js/tether.min.js')}}"></script>
-    <script src="{{URL::asset('/front/js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('/front/js/jquery.easing.js')}}"></script>
-    <script src="{{URL::asset('/front/js/jquery-waypoints.js')}}"></script>
-    <script src="{{URL::asset('/front/js/jquery-validate.js')}}"></script>
-    <script src="{{URL::asset('/front/js/owl.carousel.js')}}"></script>
-    <script src="{{URL::asset('/front/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{URL::asset('/front/js/numinate.min6959.js?ver=4.9.3')}}"></script>
-    <script src="{{URL::asset('/front/js/main.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/tether.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/jquery.easing.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/jquery-waypoints.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/jquery-validate.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/owl.carousel.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/jquery.prettyPhoto.js')}}"></script>
+    <script src="{{URL::asset('public/front/js/numinate.min6959.js?ver=4.9.3')}}"></script>
+    <script src="{{URL::asset('public/front/js/main.js')}}"></script>
 
 
     <!-- Revolution Slider -->
-    <script src="{{URL::asset('/front/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/slider.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/slider.js')}}"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
 
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-    <script src="{{URL::asset('/front/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.migration.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+    <script src="{{URL::asset('public/front/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
 
 
 

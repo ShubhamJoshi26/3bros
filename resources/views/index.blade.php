@@ -680,7 +680,7 @@
                                 @foreach($event as $ev)
                                 <div class="featured-imagebox featured-imagebox-event ttm-box-view-top-image mb-120 position-relative res-767-mlr-15">
                                     <div class="featured-thumbnail">
-                                        <img class="img-fluid" src="{{URL::asset($ev['thumbnail'])}}" alt="">
+                                        <img class="img-fluid" src="{{URL::asset('public/'.$ev['thumbnail'])}}" alt="">
                                     </div>
                                     <div class="ttm-box-post-date">
                                         <span class="ttm-entry-date">
@@ -730,7 +730,7 @@
                                 <h4>SEE OUR BEST</h4>
                                 <h2 class="title">Photo Gallery</h2>
                                 <div class="title-img">
-                                    <img src="{{URL::asset('publicpublic/front/images/ds-2.png')}}" alt="underline-img">
+                                    <img src="{{URL::asset('public/front/images/ds-2.png')}}" alt="underline-img">
                                 </div>
                             </div>
                         </div>

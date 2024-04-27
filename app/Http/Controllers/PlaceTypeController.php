@@ -102,7 +102,7 @@ class PlaceTypeController extends Controller
         if($request->hasFile('thumbnail'))
         {
             $name = time().rand(1,50).'.'.$request->file('thumbnail')->extension();
-            $request->file('thumbnail')->move(public_path('uploads/place/'.$request->title.'/thumbnail'), $name); 
+            $request->file('thumbnail')->move(public_path('uploads/place/'.str_replace(' ','-',$request->title).'/thumbnail'), $name); 
             $path = 'uploads/place/'.$request->title.'/thumbnail/'.$name; 
             $PlaceData->thumbnail = $path;
         }

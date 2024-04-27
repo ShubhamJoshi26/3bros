@@ -100,21 +100,21 @@
 	</div>
 	<!--end switcher-->
 	<!-- Bootstrap JS -->
-	<script src="{{URL::asset('public/assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{URL::asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 	<!--plugins-->
-	<script src="{{URL::asset('public/assets/js/jquery.min.js')}}"></script>
+	<script src="{{URL::asset('assets/js/jquery.min.js')}}"></script>
 	
-	<script src="{{URL::asset('public/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
-	<script src="{{URL::asset('public/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-	<script src="{{URL::asset('public/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
-	<script src="{{URL::asset('public/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
-    <script src="{{URL::asset('public/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-	<script src="{{URL::asset('public/assets/plugins/chartjs/js/Chart.min.js')}}"></script>
-	<script src="{{URL::asset('public/assets/plugins/chartjs/js/Chart.extension.js')}}"></script>
-	<script src="{{URL::asset('public/assets/js/index.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+    <script src="{{URL::asset('assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/chartjs/js/Chart.min.js')}}"></script>
+	<script src="{{URL::asset('assets/plugins/chartjs/js/Chart.extension.js')}}"></script>
+	<script src="{{URL::asset('assets/js/index.js')}}"></script>
 	<!--app JS-->
-	<script src="{{URL::asset('public/assets/js/app.js')}}"></script>
-	<script src="{{URL::asset('public/assets/js/custom.js')}}"></script>
+	<script src="{{URL::asset('assets/js/app.js')}}"></script>
+	<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- Scripts -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>

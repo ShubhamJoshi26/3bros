@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-12 col-lg-6">
                             <div class="ttm_single_image_wrapper mt_20 res-991-mt-0">
-                                <img src="{{URL::asset('public//front/images/about-2.png')}}" alt="image" class="img-fluid">
+                                <img src="{{URL::asset('/front/images/about-2.png')}}" alt="image" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-md-12 col-lg-6">
@@ -94,7 +94,7 @@
                                 <h4>WHAT WE OFFER</h4>
                                 <h2 class="title">#3BROS Banquets For Weddings</h2>
                                 <div class="title-img">
-                                    <img src="{{URL::asset('public//front/images/ds-2.png')}}" alt="underline-img">
+                                    <img src="{{URL::asset('/front/images/ds-2.png')}}" alt="underline-img">
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
                                     <img class="img-fluid"
-                                        src="{{URL::asset('public//front/images/wedding-banquet/volga-palace-govindpuram-ghaziabad-banquet-halls.jpg')}}"
+                                        src="{{URL::asset('/front/images/wedding-banquet/volga-palace-govindpuram-ghaziabad-banquet-halls.jpg')}}"
                                         alt="">
                                 </div>
                                 <div class="featured-content">
@@ -159,7 +159,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
-                                    <img class="img-fluid" src="{{URL::asset('public//front/images/wedding-banquet/party-lawn.jpg')}}" alt="">
+                                    <img class="img-fluid" src="{{URL::asset('/front/images/wedding-banquet/party-lawn.jpg')}}" alt="">
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
@@ -184,7 +184,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
-                                    <img class="img-fluid" src="{{URL::asset('public//front/images/wedding-banquet/indoor-banquet.jpg')}}" alt="">
+                                    <img class="img-fluid" src="{{URL::asset('/front/images/wedding-banquet/indoor-banquet.jpg')}}" alt="">
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
@@ -227,7 +227,7 @@
                                 <h4>WHAT WE OFFER</h4>
                                 <h2 class="title">#3BROS Farm House For Destination Weddings</h2>
                                 <div class="title-img">
-                                    <img src="{{URL::asset('public//front/images/ds-2.png')}}" alt="underline-img">
+                                    <img src="{{URL::asset('/front/images/ds-2.png')}}" alt="underline-img">
                                 </div>
                             </div>
                         </div>
@@ -281,7 +281,7 @@
                                 <h4>WHAT WE OFFER</h4>
                                 <h2 class="title">Do You Know</h2>
                                 <div class="title-img">
-                                    <img src="{{URL::asset('public//front/images/ds-2.png')}}" alt="underline-img">
+                                    <img src="{{URL::asset('/front/images/ds-2.png')}}" alt="underline-img">
                                 </div>
                                 <p>When you book a package with #3BROS, it's an all Inclusive Package which includes
                                     Free Decoration, Free Photography &
@@ -296,7 +296,7 @@
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
                                         <a href="#"> <img class="img-fluid"
-                                                src="{{URL::asset('public//front/images/portfolio/indian-wedding-gate-decoration-green-eucalyptus-background.png')}}"
+                                                src="{{URL::asset('/front/images/portfolio/indian-wedding-gate-decoration-green-eucalyptus-background.png')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -332,7 +332,7 @@
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
                                         <a href="#"> <img class="img-fluid"
-                                                src="{{URL::asset('public//front/images/portfolio/side-view-photographer-married-couple-1.jpg')}}"
+                                                src="{{URL::asset('/front/images/portfolio/side-view-photographer-married-couple-1.jpg')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -365,7 +365,7 @@
                             <div class="featured-imagebox ttm-box-view-top-image featured-imagebox-portfolio mb-30">
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/portfolio/band-baja.jpg')}}"
+                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/portfolio/band-baja.jpg')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -399,7 +399,7 @@
                             <div class="featured-imagebox ttm-box-view-top-image featured-imagebox-portfolio mb-30">
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/portfolio/band-baja.jpg')}}"
+                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/portfolio/band-baja.jpg')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -435,7 +435,7 @@
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
                                         <a href="#"> <img class="img-fluid"
-                                                src="{{URL::asset('public//front/images/portfolio/cute-dj-woman-having-fun-playing-music-club-party.jpg')}}"
+                                                src="{{URL::asset('/front/images/portfolio/cute-dj-woman-having-fun-playing-music-club-party.jpg')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -468,7 +468,7 @@
                             <div class="featured-imagebox ttm-box-view-top-image featured-imagebox-portfolio mb-30">
                                 <div class="featured-portfolio-item">
                                     <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/portfolio/bridal-entry.jpg')}}"
+                                        <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/portfolio/bridal-entry.jpg')}}"
                                                 alt="image" height="100%" width="100%"></a>
                                     </div><!-- featured-thumbnail END -->
                                     <!-- ttm-box-view-overlay -->
@@ -515,7 +515,7 @@
                                 <div class="layer-content">
                                 </div>
                             </div><!-- col-bg-img-three end-->
-                            <img src="{{URL::asset('public//front/images/bg-image/col-bgimage-3.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
+                            <img src="{{URL::asset('/front/images/bg-image/col-bgimage-3.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
                         </div>
                         <div class="col-lg-7 col-md-12">
                             <!-- about-content -->
@@ -668,7 +668,7 @@
                             <div class=" section-title clearfix">
                                 <h4>LATEST</h4>
                                 <h2 class="title">Our Events</h2>
-                                <div class="title-img"><img src="{{URL::asset('public//front/images/ds-1.png')}}" alt="underline-img"></div>
+                                <div class="title-img"><img src="{{URL::asset('/front/images/ds-1.png')}}" alt="underline-img"></div>
                             </div>
                         </div>
                     </div>
@@ -730,7 +730,7 @@
                                 <h4>SEE OUR BEST</h4>
                                 <h2 class="title">Photo Gallery</h2>
                                 <div class="title-img">
-                                    <img src="{{URL::asset('public//front/images/ds-2.png')}}" alt="underline-img">
+                                    <img src="{{URL::asset('/front/images/ds-2.png')}}" alt="underline-img">
                                 </div>
                             </div>
                         </div>
@@ -749,7 +749,7 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-1.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-1.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
@@ -776,7 +776,7 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-5.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-5.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
@@ -802,7 +802,7 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-2.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-2.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
@@ -827,7 +827,7 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-3.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-3.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
@@ -855,14 +855,14 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-6.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-6.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
                                 <div class="ttm-box-view-overlay">
                                     <div class="ttm-media-link">
                                         <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="Wedding Events" src="{{URL::asset('public//front/images/gallery/gallery-6.jpg')}}"
+                                            title="Wedding Events" src="{{URL::asset('/front/images/gallery/gallery-6.jpg')}}"
                                             href="https://youtu.be/HyqYly6o0DQ?si=pomzwyQ2vspmW6NM"
                                             data-rel="prettyPhoto">
                                             <i class="ti ti-control-play"></i>
@@ -882,7 +882,7 @@
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public//front/images/gallery/gallery-8.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('/front/images/gallery/gallery-8.jpg')}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
@@ -941,7 +941,7 @@
                                                 <div class="testimonial-content mb-35">
                                                     <div class="testimonial-avatar">
                                                         <div class="testimonial-img">
-                                                            <img class="img-center" src="{{URL::asset('public//front/images/femaluser.jpg')}}"
+                                                            <img class="img-center" src="{{URL::asset('/front/images/femaluser.jpg')}}"
                                                                 alt="testimonial-img">
                                                         </div>
                                                     </div>
@@ -961,7 +961,7 @@
                                                 <div class="testimonial-content mb-35">
                                                     <div class="testimonial-avatar">
                                                         <div class="testimonial-img">
-                                                            <img class="img-center" src="{{URL::asset('public//front/images/maleuser.jpg')}}"
+                                                            <img class="img-center" src="{{URL::asset('/front/images/maleuser.jpg')}}"
                                                                 alt="testimonial-img">
                                                         </div>
                                                     </div>
@@ -984,7 +984,7 @@
                                                 <div class="testimonial-content mb-35">
                                                     <div class="testimonial-avatar">
                                                         <div class="testimonial-img">
-                                                            <img class="img-center" src="{{URL::asset('public//front/images/femaluser.jpg')}}"
+                                                            <img class="img-center" src="{{URL::asset('/front/images/femaluser.jpg')}}"
                                                                 alt="testimonial-img">
                                                         </div>
                                                     </div>
@@ -1013,7 +1013,7 @@
                                 <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
                                 <div class="layer-content"></div>
                             </div>
-                            <img src="{{URL::asset('public//front/images/bg-image/col-bgimage-4.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
+                            <img src="{{URL::asset('/front/images/bg-image/col-bgimage-4.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
                         </div>
                         <!--Testimonials-end-->
                     </div>
@@ -1049,7 +1049,7 @@
                                 <div class="ttm-col-wrapper-bg-layer ttm-bg-layer"></div>
                                 <div class="layer-content"></div>
                             </div><!-- col-bg-img-three end-->
-                            <img src="{{URL::asset('public//front/images/bg-image/col-bgimage-3.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
+                            <img src="{{URL::asset('/front/images/bg-image/col-bgimage-3.jpg')}}" class="ttm-equal-height-image" alt="bg-image">
                         </div>
                         <div class="col-md-12 col-lg-7">
                             <div class="ttm-col-bgcolor-yes ttm-bg ttm-bgcolor-white padding-10">
@@ -1109,7 +1109,7 @@
                             <div class="section-title clearfix">
                                 <h4>WORKING WITH EXCELLENT</h4>
                                 <h2 class="title">Our Latest News/ Blog</h2>
-                                <div class="title-img"><img src="{{URL::asset('public//front/images/ds-1.png')}}" alt="underline-img"></div>
+                                <div class="title-img"><img src="{{URL::asset('/front/images/ds-1.png')}}" alt="underline-img"></div>
                             </div>
                         </div>
                     </div>

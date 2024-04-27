@@ -20,26 +20,26 @@ $type = Session()->get('type');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<!--favicon-->
-	<link rel="icon" href="{{URL::asset('/images/wafi.jpg')}}" type="image/png" />
+	<link rel="icon" href="{{URL::asset('public//images/wafi.jpg')}}" type="image/png" />
 	<!--plugins-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="{{URL::asset('/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
-	<link href="{{URL::asset('/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
-	<link href="{{URL::asset('/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
-	<link href="{{URL::asset('/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+	<link href="{{URL::asset('public//assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
+	<link href="{{URL::asset('public//assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+	<link href="{{URL::asset('public//assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
+	<link href="{{URL::asset('public//assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
 	<!-- loader-->
-	<link href="{{URL::asset('/assets/css/pace.min.css')}}" rel="stylesheet" />
-	<script src="{{URL::asset('/assets/js/pace.min.js')}}"></script>
+	<link href="{{URL::asset('public//assets/css/pace.min.css')}}" rel="stylesheet" />
+	<script src="{{URL::asset('public//assets/js/pace.min.js')}}"></script>
 	<!-- Bootstrap CSS -->
-	<link href="{{URL::asset('/assets/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{URL::asset('/assets/css/bootstrap-extended.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('public//assets/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('public//assets/css/bootstrap-extended.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
-	<link href="{{URL::asset('/assets/css/app.css')}}" rel="stylesheet">
-	<link href="{{URL::asset('/assets/css/icons.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('public//assets/css/app.css')}}" rel="stylesheet">
+	<link href="{{URL::asset('public//assets/css/icons.css')}}" rel="stylesheet">
 	<!-- Theme Style CSS -->
-	<link rel="stylesheet" href="{{URL::asset('/assets/css/dark-theme.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('/assets/css/semi-dark.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('/assets/css/header-colors.css')}}" />
+	<link rel="stylesheet" href="{{URL::asset('public//assets/css/dark-theme.css')}}" />
+	<link rel="stylesheet" href="{{URL::asset('public//assets/css/semi-dark.css')}}" />
+	<link rel="stylesheet" href="{{URL::asset('public//assets/css/header-colors.css')}}" />
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <!-- Styles -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
@@ -60,7 +60,7 @@ $type = Session()->get('type');
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<a href="{{URL::to('/')}}"><img src="{{URL::asset('images/wafi.jpg')}}" class="logo-icon" alt="logo icon"></a>
+					<a href="{{URL::to('/')}}"><img src="{{URL::asset('public/images/wafi.jpg')}}" class="logo-icon" alt="logo icon"></a>
 				</div>
 				<div>
 					<a href="{{URL::to('/')}}"><h4 class="logo-text">WAFIREALITY</h4></a>

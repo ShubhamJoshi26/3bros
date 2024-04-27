@@ -20,7 +20,7 @@ $type = Session()->get('type');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<!--favicon-->
-	<link rel="icon" href="{{URL::asset('public/images/wafi.jpg')}}" type="image/png" />
+	<link rel="icon" href="{{URL::asset('public/images/3borslogo.jpg')}}" type="image/png" />
 	<!--plugins-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="{{URL::asset('public/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
@@ -50,7 +50,7 @@ $type = Session()->get('type');
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-	<title>Wafi Reality</title>
+	<title>3Bros</title>
 </head>
 
 <body>
@@ -60,10 +60,10 @@ $type = Session()->get('type');
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<a href="{{URL::to('/')}}"><img src="{{URL::asset('images/wafi.jpg')}}" class="logo-icon" alt="logo icon"></a>
+					<a href="{{URL::to('/')}}"><img src="{{URL::asset('public/images/3borslogo.jpg')}}" class="logo-icon" alt="logo icon"></a>
 				</div>
 				<div>
-					<a href="{{URL::to('/')}}"><h4 class="logo-text">WAFIREALITY</h4></a>
+					<a href="{{URL::to('/')}}"><h4 class="logo-text">#3BROS</h4></a>
 					<!-- <a href="{{URL::to('/')}}"><p class="text-left logo-text"><small>TECHNOLOGIES</small></p></a> -->
 				</div>
 

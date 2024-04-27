@@ -109,13 +109,6 @@ $data_publish = array("1" => "Enable", "0" => "Disable");
                <label class="label">Page Content 1</label>
                <div class="control">
                   <textarea class="form-control ckeditor textarea" rows="10" id="summernote1" name="pageContent" placeholder="Page Description" value="">{{$pageContent}}</textarea>
-                  <script>
-                     CKEDITOR.replace('pageContent', {
-                        filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token() ]) }}",
-                        filebrowserUploadMethod: 'form',
-
-                     });
-                  </script>
                </div>
                @error('pageContent')
                <span class="text-red-500">The Page Content field is required.</span>
@@ -125,13 +118,7 @@ $data_publish = array("1" => "Enable", "0" => "Disable");
                <label class="label">Page Content 2</label>
                <div class="control">
                   <textarea class="form-control ckeditor textarea" rows="10" id="summernote2" name="pageContent2" placeholder="Page Description 2" value="">{{$pageContent2}}</textarea>
-                  <script>
-                     CKEDITOR.replace('pageContent2', {
-                        filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token() ]) }}",
-                        filebrowserUploadMethod: 'form',
-
-                     });
-                  </script>
+                 
                </div>
                @error('pageContent')
                <span class="text-red-500">The Page Content field is required.</span>
@@ -141,13 +128,7 @@ $data_publish = array("1" => "Enable", "0" => "Disable");
                <label class="label">Page Content 3</label>
                <div class="control">
                   <textarea class="form-control ckeditor textarea" rows="10" id="summernote3" name="pageContent3" placeholder="Page Description 3" value="">{{$pageContent3}}</textarea>
-                  <script>
-                     CKEDITOR.replace('pageContent3', {
-                        filebrowserUploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token() ]) }}",
-                        filebrowserUploadMethod: 'form',
-
-                     });
-                  </script>
+                  
                </div>
                @error('pageContent3')
                <span class="text-red-500">The Page Content3 field is required.</span>

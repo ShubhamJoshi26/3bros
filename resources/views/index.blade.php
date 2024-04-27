@@ -1121,7 +1121,7 @@
                                 <div class="row row-equal-height">
                                     <div class="col-md-12 col-lg-6 ttm-featured-img-left">
                                         <div class="featured-thumbnail">
-                                            <a href="#"><img class="img-fluid" src="{{URL::asset($b['image_path'])}}"
+                                            <a href="#"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
                                                     alt="image"></a>
                                         </div>
                                     </div>
@@ -1157,7 +1157,7 @@
                             <div
                                 class="featured-imagebox featured-imagebox-post ttm-box-view-top-image box-shadow1 ttm-bgcolor-white mb-30 res-1199-m-0">
                                 <div class="featured-thumbnail">
-                                    <a href="blog-details.html"><img class="img-fluid" src="{{URL::asset($next['image_path'])}}"
+                                    <a href="blog-details.html"><img class="img-fluid" src="{{URL::asset('public/'.$next['image_path'])}}"
                                             alt="image"></a>
                                 </div>
                                 <div class="featured-content featured-content-post">

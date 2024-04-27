@@ -197,7 +197,7 @@
 }
 
 .ttm-row.cta-section {
-    padding: 50px 0 50px;
+    padding: 44px 0 35px;
 }
 
 .ttm-row.last-section {
@@ -1137,7 +1137,7 @@ h2.title strong {
 }
 
 .ttm-fid-contents sub {
-    font-size: 15px;
+    font-size: 40px;
     font-weight: 600;
     bottom: 2px;
 }
@@ -1586,7 +1586,7 @@ h2.title strong {
 
 .ttm-box-post-date .ttm-entry-date .entry-month,
 .ttm-box-post-date .ttm-entry-date .entry-year {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     display: block;
     text-transform: uppercase;
@@ -2450,7 +2450,7 @@ h2.title strong {
     background-color: transparent;
     border: none;
     border-radius: 0;
-    padding-bottom: 9px;
+    padding-bottom: 2px;
     padding-left: 35px;
     border-bottom: 1px solid rgba(0, 0, 0, .15)
 }

@@ -546,7 +546,7 @@
 
     .site-branding {
         display: block;
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
@@ -565,7 +565,7 @@
         border-top: 3px solid;
         z-index: 100;
         width: 100%;
-        top: 105px;
+        top: 45px;
         background-color: #fff;
         margin: 0;
     }
@@ -651,7 +651,8 @@
         z-index: 99;
         height: 100%;
         width: 100%;
-        top: 43px;
+        bottom: 68px;
+        /* top: 43px; */
         left: 15px;
         margin: 0;
     }
@@ -1245,6 +1246,8 @@
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
     .res-col991-plr-0 {
         padding-left: 0px;
         padding-right: 0px;
@@ -1279,6 +1282,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+
 
     .ttm-tabs ul.connect-tabs li:not(:last-child):before,
     .ttm-tabs ul.connect-tabs li:not(:last-child):after {
@@ -1323,6 +1327,11 @@
 }
 
 @media (max-width: 767px) {
+    .trib-events-vanue h5 {
+        font-size: 20px;
+        line-height: 24px !important;
+        margin-top: 18px;
+    }
 
     .res-mt20-767 {
         margin-top: 20px;
@@ -1570,7 +1579,7 @@
     }
 
     .featured-imagebox.static-title .featured-content {
-        margin: -32px 39px 0;
+        margin: -32px 14px 0;
     }
 
     .title-box-only h4 {
@@ -1631,7 +1640,8 @@
 
 @media (max-width: 390px) {
     .site-branding img {
-        max-height: 50px;
+        max-height: 90px;
+        padding-left: 40px;
     }
 
     .ttm-btn.ml-15,

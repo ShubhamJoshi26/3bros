@@ -375,6 +375,13 @@
                             </div>
                             <P>Copyright © 2024 . All rights reserved.</P>
                         </div>
+                        <div class="col-sm-12" style="text-align: -webkit-center;">
+                        <div class="company-desc">
+                            <a href="{{route('disclaimer')}}">Disclaimer | </a>
+                            <a href="{{route('privacy-policy')}}">Privacy-Policy | </a>
+                            <a href="{{route('terms-and-condition')}}">Term-and-Condition</a>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

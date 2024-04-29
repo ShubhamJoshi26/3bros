@@ -82,3 +82,4 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/privacy-policy',function(){ return view('privacy-policy');})->name('privacy-policy');
     Route::get('/terms-and-condition',function(){ return view('terms-and-condition');})->name('terms-and-condition');
     Route::get('/disclaimer',function(){ return view('disclaimer');})->name('disclaimer');
+    Route::get('/blogs',[FrontController::class,'allBlogs'])->name('allblogs');

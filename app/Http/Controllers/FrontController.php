@@ -43,4 +43,10 @@ class FrontController extends Controller
         }
         
     }
+    function allBlogs()
+    {
+        $bloglist = Blog::all()->toArray();
+        $blogs = $this->paginate($bloglist,10);
+        return view('blogs',compact('blogs'));
+    }
 }

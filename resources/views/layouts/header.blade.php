@@ -11,10 +11,10 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#Bros</title>
+    <title>#3Bros</title>
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.png" media="all" />
+    <link rel="shortcut icon" href="{{URL::asset('public/front/images/favicon.png')}}" media="all" />
 
     <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/front/css/bootstrap.min.css')}}" media="all" />
@@ -69,23 +69,26 @@
         <!--header start-->
         <header id="masthead" class="header ttm-header-style-classic-box ttm-header-overlay">
             <!--topbar start-->
-            <div class="ttm-topbar-wrapper ttm-bgcolor-skincolor ttm-textcolor-white clearfix">
+         <div class="ttm-topbar-wrapper ttm-bgcolor-skincolor ttm-textcolor-white clearfix">
                 <div class="container">
                     <div class="ttm-topbar-content">
                         <ul class="top-contact text-left">
-                            <li class="list-inline-item"><i class="fa fa-map-marker"></i>206 South Marion Avenue,
-                                Florida
-                            </li>
-                            <li class="list-inline-item"><strong><i class="fa fa-phone"></i>Call : </strong><a
-                                    href="tel:072109-91313">072109-91313</a>
+                            <!--<li class="list-inline-item"><i class="fa fa-map-marker"></i>Plot H1A/19, Near, Electronic City Metro Sta Rd, above Dominos, H Block, Sector 63-->
+                              
+                             <li class="list-inline-item"><strong><i class="fa fa-envelope-o"></i> </strong>
+                                    <a href="mailto:sales@3bros.in"> sales@3bros.in</a>, <a href="mailto:3brosreviews@gmail.com"> 3brosreviews@gmail.com</a>
+                                </li> <!--</li>-->
+                            <li class="list-inline-item"><strong><i class="fa fa-phone"></i> </strong><a
+                                    href="tel:+91-72109-91313">+91-7210991313</a>,
+                                    <a href="tel:+91-9058112967">+91-9058112967</a>
                             </li>
                         </ul>
                         <div class="topbar-right text-right">
-                            <ul class="top-contact">
-                                <li class="list-inline-item"><strong><i class="fa fa-envelope-o"></i>Email : </strong>
-                                    <a href="mailto:sales@3bros.in"> sales@3bros.in</a>
-                                </li>
-                            </ul>
+                            <!--<ul class="top-contact">-->
+                            <!--    <li class="list-inline-item"><strong><i class="fa fa-envelope-o"></i>Email : </strong>-->
+                            <!--        <a href="mailto:sales@3bros.in"> sales@3bros.in</a>-->
+                            <!--    </li>-->
+                            <!--</ul>-->
                             <!-- <a class="ttm-btn btn-inline ttm-btncolor-white ttm-icon-btn-right" href="#">Book Event
                                 <i class="fa fa-caret-right"></i>
                             </a> -->
@@ -264,7 +267,7 @@
 
 
          <!--footer-->
-         <footer class="footer widget-footer bg-img11 ttm-bgcolor-black ttm-bg ttm-bgimage-yes clearfix pt-40">
+       <footer class="footer widget-footer bg-img11 ttm-bgcolor-black ttm-bg ttm-bgimage-yes clearfix pt-40">
             <div class="ttm-row-wrapper-bg-layer ttm-bg-layer " style=" opacity:0.6"></div>
 
             <div class="second-footer">
@@ -276,32 +279,43 @@
                                 <div class="widget widget-out-link clearfix">
                                     <h4 class="widget-title">Contact Us</h4>
                                     <ul class="widget-contact">
-                                        <li><i class="fa fa-map-marker"></i>Themeforest, Envanto HQ<br>24 Fifth st., Los
-                                            Angeles, USA</li>
+                                        <li><i class="fa fa-map-marker"></i>Plot H1A/19, Near, Electronic City Metro Sta Rd, above Dominos, H Block, Sector 63, Noida, Uttar Pradesh 201301</li>
                                         <li><i class="fa fa-envelope-o"></i><a
-                                                href="mailto:sales@3bros.in">sales@3bros.in</a></li>
-                                        <li><i class="fa fa-phone"></i>Phone: 072109 91313 </li>
+                                                href="mailto:sales@3bros.in">sales@3bros.in</a></br> <a href="mailto:3brosreviews@gmail.com"> 3brosreviews@gmail.com</a></li>
+                                        <li><i class="fa fa-phone"></i><a href="tel:+91-07210991313">+91-07210991313</a></br><a href="tel:+91-9058112967">+91-9058112967</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="widget widget_nav_menu clearfix">
-                                    <h4 class="widget-title">Banquets & Farmhouse </h4>
+                                    <h4 class="widget-title">Banquets In East Delhi </h4>
                                     <ul class="menu-footer-services">
-                                        <li><a href="#">Banquets In Noida</a></li>
-                                        <li><a href="#">Banquets In Ghaziabad</a></li>
-                                        <li><a href="#">Banquets In East Delhi</a></li>
+                                        <li><a href="#">Banquets In Anand Vihar</a></li>
+                                        <li><a href="#">Banquets In karkardooma </a></li>
+                                        <li><a href="#">Banquets In Laxmi Nagar</a></li>
+                                        <li><a href="#">Banquets In Loni Border</a></li>
+                                        <li><a href="#">Banquets In Loni Border</a></li>
+                                        <li><a href="#">Banquets In Mayur Vihar</a></li>
+                                        <li><a href="#">Banquets In Patparganj</a></li>
+                                         <li><a href="#">Banquets In shastri nagar </a></li>
 
                                     </ul>
                                 </div>
                             </div>
                             <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="widget widget-out-link clearfix ">
-                                    <h4 class="widget-title">Quick Links</h4>
+                                    <h4 class="widget-title">Banquets In Ghaziabad </h4>
                                     <ul class="menu-footer-services">
-                                        <li><a href="#">Wow Birthday Theme</a></li>
-                                        <li><a href="#">Why 3bros</a></li>
-                                        <li><a href="#">Contact us</a></li>
+                                        <li><a href="#">Banquets In Govindpuram </a></li>
+                                        <li><a href="#">Banquets In Indrapuram</a></li>
+                                        <li><a href="#">Banquets In Kavi Nagar</a></li>
+                                        <li><a href="#">Banquets In Mohan Nagar</a></li>
+                                        <li><a href="#">Banquets In Raj Nagar Ext.</a></li>
+                                        <li><a href="#">Banquets In Shyam Park</a></li>
+                                        <li><a href="#">Banquets In Shurya Nagar</a></li>
+                                        <li><a href="#">Banquets In Vasundhra</a></li>
+                                        
+                                          
 
 
                                     </ul>
@@ -309,13 +323,22 @@
                             </div>
                             <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                 <div class="widget widget-out-link clearfix ">
-                                    <h4 class="widget-title">Plan your Party</h4>
+                                    <h4 class="widget-title">Banquets In Noida</h4>
                                     <ul class="menu-footer-services">
-                                        <li><a href="#">First Birthday Party</a></li>
-                                        <li><a href="#">First Birthday Party</a></li>
-                                        <li><a href="#">Ring Ceremony</a></li>
-                                        <li><a href="#">Kitty Party</a></li>
-                                        <li><a href="#">Corporate Party</a></li>
+                                        <li><a href="#">Banquets In Mayur Vihar</a></li>
+                                         <li><a href="#">Banquets In Greater Noida</a></li>
+                                         <li><a href="#">Banquets In ExpressWay</a></li>
+                                        <li><a href="#">Banquets In Noida Ext</a></li>
+                                         <li><a href="#">Banquets In Noida Sec 104</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 18</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 29</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 37</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 63</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 75</a></li>
+                                          <li><a href="#">Banquets In Noida Sec 135</a></li>
+                                     
+                                       
+                                         
 
                                     </ul>
                                 </div>

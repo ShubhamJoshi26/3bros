@@ -48,14 +48,14 @@ class Controller extends BaseController
         $email = $data->email;
         $phone = $data->phone;
         $msg = $data->msg;
-        // $clientemailid = 'shyam@wmmsols.com, sayarabano036@gmail.com';
-      $clientemailid = 'shubh26joshi333@gmail.com';
+        $clientemailid = 'shyam@wmmsols.com, sayarabano036@gmail.com';
+        $clientemailid = 'shubh26joshi333@gmail.com';
         $clientmailbody = 'Greeting!! '."\r\n".' We have recieved a new enquiry details mention as below: '."\r\n".' Name = '.$name. ' '."\r\n".'  Email = '.$email.' '."\r\n".' Phone Number = '.$phone.' '."\r\n".' Message = '.$msg.' '."\r\n".' Thanks ';
         $clientmailsubject = 'New Enquiry Recieved';
         $customermailbody = 'Dear '.$name.', '."\r\n".' We have recieved your enquiry, we will connect you to soon. '."\r\n".' Thanks & Regards '."\r\n".' '.$clientname;
         $customermailsubject = 'Thanks For Enquiry';
-        // Mail::to($clientemailid)->send(new SendMail($name,$email,$clientmailsubject,$clientmailbody));
-        // return Mail::to($email)->send(new SendMessageToEndUser($name,$customermailbody));
+        Mail::to($clientemailid)->send(new SendMail($name,$email,$clientmailsubject,$clientmailbody));
+        return Mail::to($email)->send(new SendMessageToEndUser($name,$customermailbody));
     }
     public function createUrlEntity($data)
     {

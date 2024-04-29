@@ -24,6 +24,7 @@ $menu_parent_id = (old('menu_parent_id') != '' ) ? old('menu_parent_id') : $menu
 $menuType = (old('menuType') != '' ) ? old('menuType') : $menuData->menuType;
 $sort_order = (old('sort_order') != '') ? old('sort_order') : $menuData->weight;
 $publish = (old('status') != '' ) ? old('status') : $menuData->status;
+$position = (old('position') != '' ) ? old('position') : $menuData->position;
 $menuurl = $menuData->menu_url;
 $typeid = $menuData->typeid;
 @endphp
@@ -85,7 +86,10 @@ $data_publish = array("1"=>"Enable","0"=>"Disable")
                         </div>
                      </div>
                   </div>
-                  <div class="form-group col-md-6" id="positioninput"></div>
+                  <div class="form-group col-md-6" id="positioninput"> 
+                  <label class="form-label">Position</label>
+               <input class="form-control"  name="position" placeholder="Menu Position" value="{{$position}}" ></div>
+                  </div>
                   <div class="form-group col-md-6">
                      <label class="form-label">Menu Type</label>
                      <div class="control">
@@ -178,10 +182,19 @@ $data_publish = array("1"=>"Enable","0"=>"Disable")
          $('#premalinkidothers').hide();
          var premalinkPage = $('#menu_parent_id').val();
          if (premalinkPage == 0) {
-            newinput = '<input class="input"  name="position" placeholder="Menu Position" value="" >';
-            $('#positioninput').html(newinput);
+            $('#positioninput').show();
+         }
+         else
+         {
+            $('#positioninput').hide();
          }
       });
+      setTimeout(() => {
+         if($('#menu_parent_id').val()==0)
+         {
+            $('#positioninput').show();
+         }
+      }, 2000);
    });
 </script>
 @include('admin.layout.footer')

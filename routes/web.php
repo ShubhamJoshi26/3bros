@@ -79,3 +79,6 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/',[FrontController::class,'index']);
     Route::get('/allvenue',[FrontController::class,'allVenues'])->name('allvenue');
     Route::post('/submitenquiry',[FrontController::class,'submitenquiry'])->name('submitenquiry');
+    Route::get('/privacy-policy',function(){ return view('privacy-policy');})->name('privacy-policy');
+    Route::get('/terms-and-condition',function(){ return view('terms-and-condition');})->name('terms-and-condition');
+    Route::get('/disclaimer',function(){ return view('disclaimer');})->name('disclaimer');

@@ -42,10 +42,10 @@
                                     <!-- ttm-fid -->
                                     <div class="ttm-fid inside ttm-fid-view-topicon">
                                         <div class="ttm-fid-contents">
-                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="50"
-                                                    data-interval="10" data-before="" data-before-style="sup"
-                                                    data-after="" data-after-style="sub">50
-                                                </span><sub>k</sub>
+                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="0"
+                                                    data-interval="0" data-before="" data-before-style="sup"
+                                                    data-after="" data-after-style="sub">
+                                                </span>3<sub>M</sub>
                                             </h4>
                                             <h3 class="ttm-fid-title"><span>Customers</span></h3>
                                         </div><!-- ttm-fid-contents end -->
@@ -55,9 +55,9 @@
                                     <!-- ttm-fid -->
                                     <div class="ttm-fid inside ttm-fid-view-topicon">
                                         <div class="ttm-fid-contents">
-                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="15"
+                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="10"
                                                     data-interval="5" data-before="" data-before-style="sup"
-                                                    data-after="" data-after-style="sub">15
+                                                    data-after="" data-after-style="sub">10
                                                 </span><sub>Years</sub>
                                             </h4>
                                             <h3 class="ttm-fid-title"><span>Experience</span></h3>
@@ -68,12 +68,12 @@
                                     <!-- ttm-fid -->
                                     <div class="ttm-fid inside ttm-fid-view-topicon">
                                         <div class="ttm-fid-contents">
-                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="70"
-                                                    data-interval="10" data-before="" data-before-style="sup"
-                                                    data-after="" data-after-style="sub">70
-                                                </span><sub>k</sub>
+                                            <h4><span data-appear-animation="animateDigits" data-from="0" data-to="0"
+                                                    data-interval="0" data-before="" data-before-style="sup"
+                                                    data-after="" data-after-style="sub">
+                                                </span>1<sub>Lac</sub>
                                             </h4>
-                                            <h3 class="ttm-fid-title"><span>Project Done</span></h3>
+                                            <h3 class="ttm-fid-title"><span>Events Done</span></h3>
                                         </div><!-- ttm-fid-contents end-->
                                     </div><!-- ttm-fid end -->
                                 </div>
@@ -622,43 +622,22 @@
             </section>
             <!--service-section.style2 end-->
 
-            <!--timer-section start-->
-            <div class="ttm-row timer-section ttm-bgcolor-grey mt_60 clearfix">
+            <!--video-section start-->
+            
+            <section>
                 <div class="container">
-                    <div class="row align-item-center">
-                        <div class="col-md-12 col-lg-5">
-                            <div class="section-title with-desc clearfix m-0">
-                                <div class="title-header">
-                                    <h2 class="title mb-0 res-991-mb-30">Our Upcoming Events:</h2>
-                                </div>
-                            </div>
+                <div class="row">
+                             <div class="col-md-12">
+                                           <div class="intro-video mt-20 mb-10">
+                        <iframe width="100%" height="550" src="https://www.youtube.com/embed/5D2rm7-vFik?si=YT_kiRV52f1jddbJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>  
+                       </div>
+                            
                         </div>
-                        <div class="col-md-12 col-lg-7 timer-wraper">
-                            <div class="timer-box-content">
-                                <div id="timer-box" class="timer-box">
-                                    <div class="line-bgimg2 timer-box-position">
-                                        <span class="days"></span>
-                                        <div class="bottom-txt">Days</div>
-                                    </div>
-                                    <div class="line-bgimg2 timer-box-position">
-                                        <span class="hours"></span>
-                                        <div class="bottom-txt">Hours</div>
-                                    </div>
-                                    <div class="line-bgimg2 timer-box-position">
-                                        <span class="minutes"></span>
-                                        <div class="bottom-txt">Minutes</div>
-                                    </div>
-                                    <div class="line-bgimg2  timer-box-position">
-                                        <span class="seconds"></span>
-                                        <div class="bottom-txt">Seconds</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!--timer-section end-->
+            </section>
+
+            <!--video-section end-->
 
             <!--event-section start-->
             <section class="ttm-row event-section clearfix">
@@ -1185,12 +1164,33 @@
 
         </div><!-- site-main end -->
 
-        <div class="custome-marquee">
-            <div>
-                <span>Celebration कोई भी हो हम हैं ना #3BROS</span>
+       
+       <!----3bros main tagline----->
+        <section class="ttm-row cta-section ttm-bgcolor-skincolor clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="featured-box style5 ">
+                                <div class="featured-content">
+                                    
+                                    <div class="featured-title">
+                                     
+   <h5 class="tagline"style="text-align: center;
+    font-size: 56px;" >Celebration कोई भी हो हम हैं ना #3BROS</h5>
 
-
-            </div>
-        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            
+            
+       <!----3bros main tagline End----->
+       
 @endsection
        

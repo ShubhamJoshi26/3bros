@@ -77,3 +77,5 @@ Route::group(['prefix' => 'admin'], function(){
 });
     //Front Routes///
     Route::get('/',[FrontController::class,'index']);
+    Route::get('/allvenue',[FrontController::class,'allVenues'])->name('allvenue');
+    Route::post('/submitenquiry',[FrontController::class,'submitenquiry'])->name('submitenquiry');

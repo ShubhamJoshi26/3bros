@@ -23,6 +23,7 @@ $menu_parent_id = (old('menu_parent_id') != '' ) ? old('menu_parent_id') : "";
 $menuType = (old('menuType') != '' ) ? old('menuType') : "";
 $sort_order = (old('sort_order') != '') ? old('sort_order') : "";
 $publish = (old('status') != '' ) ? old('status') : "";
+$position = (old('position') != '' ) ? old('position') : "";
 $premalinkname = array("page"=>"Page");
 $data_publish = array("1"=>"Enable","0"=>"Disable")
 @endphp
@@ -92,7 +93,9 @@ $data_publish = array("1"=>"Enable","0"=>"Disable")
                      @enderror
                   </div>
                </div>
-               <div class="form-group col-md-6" id="positioninput" style="display:none;"></div>
+               <div class="form-group col-md-6" id="positioninput" style="display:none;">
+               <label class="form-label">Position</label>
+               <input class="form-control"  name="position" placeholder="Menu Position" value="{{$position}}" ></div>
                <div class="form-group col-md-6">
                   <label class="form-label">Menu Type</label>
                   <div class="control">
@@ -184,22 +187,15 @@ $data_publish = array("1"=>"Enable","0"=>"Disable")
          $('#premalinkidothers').hide();
          var premalinkPage = $(this).val();
          if (premalinkPage == 0) {
-            newinput = '<label class="form-label">Position</label>';
-            newinput += '<input class="form-control"  name="position" placeholder="Menu Position" value="" >';
-            $('#positioninput').html(newinput);
             $('#positioninput').show();
          }
          else
          {
-            $('#positioninput').html('');
             $('#positioninput').hide();
          }
       });
       if($('#menu_parent_id').val()==0)
       {
-         newinput = '<label class="form-label">Position</label>';
-         newinput += '<input class="form-control"  name="position" placeholder="Menu Position" value="" >';
-         $('#positioninput').html(newinput);
          $('#positioninput').show();
       }
    });

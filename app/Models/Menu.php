@@ -65,7 +65,6 @@ class Menu extends Model
             ->where('status', '1')
             ->orderBy('position')
             ->get();
-
         $mainlist = '<ul id="main-nav" class="dropdown">';
         foreach ($parent as $pr) {
             $mainlist .= (new static)->MenuTree('', $pr->sub_id, $pr->menuid, $pr->name, $pr->menu_url, 0);

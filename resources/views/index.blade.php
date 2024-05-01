@@ -1323,7 +1323,7 @@
                                 <div class="row row-equal-height">
                                     <div class="col-md-12 col-lg-6 ttm-featured-img-left">
                                         <div class="featured-thumbnail">
-                                            <a href="#"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
+                                            <a href="/blog-detail/{{$b['id']}}"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
                                                     alt="image"></a>
                                         </div>
                                     </div>
@@ -1337,13 +1337,13 @@
                                                 </span>
                                             </div>
                                             <div class="featured-title ml-70">
-                                                <h5><a href="#">{{$b['title']}}</a></h5>
+                                                <h5><a href="/blog-detail/{{$b['id']}}">{{$b['title']}}</a></h5>
                                             </div>
                                             <div class="featured-desc">
                                                 <p class="res-991-mb-0">{!!$b['description']!!}</p>
                                             </div>
                                             <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-20 mb-15"
-                                                href="#" title="">Read More</a>
+                                                href="/blog-detail/{{$b['id']}}" title="">Read More</a>
                                         </div>
                                     </div>
                                 </div>

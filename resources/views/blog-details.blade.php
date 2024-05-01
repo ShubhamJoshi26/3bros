@@ -31,7 +31,7 @@
                         <div class="col-lg-9 content-area">
                             <article class="post ttm-blog-classic">
                                 <div class="post-image ttm_single_image_wrapper">
-                                    <img class="img-fluid" src="{{URL::asset('public/',$blog['image_path'])}}" alt="">
+                                    <img class="img-fluid" src="{{URL::asset('public/'.$blog['image_path'])}}" alt="">
                                 </div>
                                 <div class="ttm-blog-classic-content single-blog">
                                     <div class="post-meta">

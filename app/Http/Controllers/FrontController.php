@@ -49,4 +49,10 @@ class FrontController extends Controller
         $blogs = $this->paginate($bloglist,10);
         return view('blogs',compact('blogs'));
     }
+    function blogDetails($id)
+    {
+        $blogs = Blog::all()->toArray();
+        $blog = Blog::find($id)->toArray();
+        return view('blog-details',compact('blog','blogs'));
+    }
 }

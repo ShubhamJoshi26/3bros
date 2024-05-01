@@ -38,7 +38,7 @@
                                         <small class="month">{{date('M',strtotime($blog['created_at']))}}</small>
                                     </div>
                                     <div class="post-title ml-85 res-pt75-767">
-                                        <h5><a href="#">{{$blog['title']}}</a> </h5>
+                                        <h5><a href="/blog-detail/{{$blog['id']}}">{{$blog['title']}}</a> </h5>
                                     </div>
                                     <div class="post-meta ml-85 shape-rounded">
                                         <ul class="list-inline">
@@ -50,7 +50,7 @@
                                     <p class="pt-20">{!!substr($blog['description'],0,150).'...'!!}
                                     </p>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-black mt-15 "
-                                        href="#">Read More</a>
+                                        href="/blog-detail/{{$blog['id']}}">Read More</a>
                                 </div>
                             </article>
                             @endforeach
@@ -103,8 +103,8 @@
                                 <ul class="ttm-recent-post-list">
                                     @foreach($blogs as $num=>$blog)
                                     <li class="ttm-recent-post-list-li clearfix">
-                                        <a href="single-blog.html"><img src="{{URL::asset('public/'.$blog['image_path'])}}" alt="blog-img"></a>
-                                        <a href="single-blog.html">{{$blog['title']}}</a>
+                                        <a href="/blog-detail/{{$blog['id']}}"><img src="{{URL::asset('public/'.$blog['image_path'])}}" alt="blog-img"></a>
+                                        <a href="/blog-detail/{{$blog['id']}}">{{$blog['title']}}</a>
                                         <span class="post-date">{{date('M d, Y',strtotime($blog['created_at']))}}</span>
                                     </li>
                                     @endforeach

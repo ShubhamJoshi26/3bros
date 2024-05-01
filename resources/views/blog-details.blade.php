@@ -64,7 +64,7 @@
                                     @foreach($blogs as $num=>$bg)
                                     <li class="ttm-recent-post-list-li clearfix">
                                         <a href="/blog-detail/{{$bg['id']}}"><img src="{{URL::asset('public/'.$bg['image_path'])}}" alt="blog-img"></a>
-                                        <a href="/blog-detail/{{$bg['id']}}">{{$blog['title']}}</a>
+                                        <a href="/blog-detail/{{$bg['id']}}">{{$bg['title']}}</a>
                                         <span class="post-date">{{date('M d, Y',strtotime($bg['created_at']))}}</span>
                                     </li>
                                     @endforeach

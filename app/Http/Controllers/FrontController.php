@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Events;
+use App\Models\Images;
 use App\Models\PlaceType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,5 +55,13 @@ class FrontController extends Controller
         $blogs = Blog::all()->toArray();
         $blog = Blog::find($id)->toArray();
         return view('blog-details',compact('blog','blogs'));
+    }
+    function vanueDetails($id)
+    {
+        $table = 'place_type';
+        $images = ImageController::getAllUploadedFiles($id,$table);
+        $venue = PlaceType::find($id)->toArray();
+        $allvenue = PlaceType::all()->toArray();
+        return view('venue_details',compact('images','venue','allvenue'));
     }
 }

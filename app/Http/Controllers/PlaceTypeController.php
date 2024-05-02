@@ -69,7 +69,6 @@ class PlaceTypeController extends Controller
     }
     public function CreatePlace(Request $request)
     {
-        
         $validated = Validator::make($request->all(),[
             'title'=>'required',
             'description'=>'required',
@@ -103,7 +102,7 @@ class PlaceTypeController extends Controller
         {
             $name = time().rand(1,50).'.'.$request->file('thumbnail')->extension();
             $request->file('thumbnail')->move(public_path('uploads/place/'.str_replace(' ','-',$request->title).'/thumbnail'), $name); 
-            $path = 'uploads/place/'.$request->title.'/thumbnail/'.$name; 
+            $path = 'uploads/place/'.str_replace(' ','-',$request->title).'/thumbnail/'.$name; 
             $PlaceData->thumbnail = $path;
         }
         if($PlaceData->save())

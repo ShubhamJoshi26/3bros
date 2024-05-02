@@ -25,8 +25,8 @@ class ImageController extends Controller
             {
                 
                 $name = time().rand(1,50).'.'.$file->extension();
-                $file->move(public_path('/uploads/'.$folder.'/'.$data->title.'/images/'), $name); 
-                $path = '/uploads/'.$folder.'/'.$data->title.'/images/'.$name; 
+                $file->move(public_path('/uploads/'.$folder.'/'.str_replace(' ','-',$data->title).'/images/'), $name); 
+                $path = '/uploads/'.$folder.'/'.str_replace(' ','-',$data->title).'/images/'.$name; 
                 $images = new Images;
                 $images->path = $path;
                 $images->item_id = $item_id;
@@ -39,6 +39,11 @@ class ImageController extends Controller
        {
         return false;
        }
+   }
+   public static function getAllUploadedFiles($id,$table)
+   {
+        $allImages = Images::where('item_id',$id)->where('table_name',$table)->get()->toArray();
+        return $allImages;
    }
       
 }

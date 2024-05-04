@@ -31,16 +31,16 @@
                             <!-- card left -->
                             <div class="product-imgs">
                                 <div class="img-display">
-                                    <div class="img-showcase">
+                                    <div class="img-showcase" style="transform: translateX(-3512px);">
                                         @foreach($images as $img)
                                         <img src="{{URL::asset('public'.$img['path'])}}" style="width:100%; max-width:100%;" alt="Banquet Hall Images">
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="img-select">
-                                    @foreach($images as $img)
+                                    @foreach($images as $k=> $img)
                                     <div class="img-item">
-                                        <a href="#" data-id="1">
+                                        <a href="#" data-id="{{$k+1}}">
                                             <img src="{{URL::asset('public'.$img['path'])}}" style="width:100%; max-width:100%;" alt="Banquet Hall Images">
                                         </a>
                                     </div>
@@ -70,32 +70,36 @@
                                     </p>
                                 </div>
                                 <!-- section title end -->
-                                <form id="contactform" class="row contactform wrap-form clearfix" method="post" action="#" novalidate="novalidate">
+                                <form id="contactform" class="row contactform wrap-form clearfix" method="post" action="{{route('submitenquiry')}}" novalidate="novalidate">
+                                @csrf
+                                <input type="hidden" id="type" name="type" value="booking">
+                                <input type="hidden" id="venue" name="venue" value="{{$venue['title']}}">
+                                <input type="hidden" id="message" name="message" value="for booking">
                                     <label class="col-md-6">
                                         <i class="ti ti-user"></i>
                                         <span class="ttm-form-control"><input class="text-input" name="name" type="text" value="" placeholder="Your Name:*" required="required"></span>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-mobile"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="phone" type="text" value="" placeholder="Your Number:*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="mobile" type="text" value="" placeholder="Your Number:*" required="required"></span>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-location-pin"></i>
                                         <select name="billing_state" id="" class="state_select select2-hidden-accessible">
                                             <option value="">Select the Occasion</option>
-                                            <option value="AP">Birthday Party</option>
-                                            <option value="AR">Anniversary</option>
-                                            <option value="AR">Weddings</option>
+                                            <option value="Birthday Party">Birthday Party</option>
+                                            <option value="Anniversary">Anniversary</option>
+                                            <option value="Weddings">Weddings</option>
                                         </select>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-comment"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="phone" type="text" value="" placeholder="No. Of Guest:*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="nop" type="text" value="" placeholder="No. Of Guest:*" required="required"></span>
                                     </label>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-comment"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="phone" type="datetime-local" value="" placeholder="*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="date" type="datetime-local" value="" placeholder="*" required="required"></span>
                                     </label>
                                     <!-- <label class="col-md-12">
                                        <i class="ti ti-comment"></i>

@@ -33,11 +33,13 @@ class FrontController extends Controller
     public function submitenquiry(Request $request)
     {
         $name = $request->name;
-        $email = $request->email;
+        $email = $request->email??'';
         $venue = $request->venue;
         $mobile = $request->mobile;
         $message = $request->message;
-        $data = array('name'=>$name,'email'=>$email,'venue'=>$venue,'mobile'=>$mobile,'message'=>$message);
+        $nop = $request->nop??'';
+        $type = $request->type??''; 
+        $data = array('name'=>$name,'email'=>$email,'venue'=>$venue,'mobile'=>$mobile,'message'=>$message,'nop'=>$nop,'type'=>$type);
         if(DB::table('booking_enquiry')->insert($data))
         {
             return redirect(url()->previous())->with('success','Enquiry Recieved');

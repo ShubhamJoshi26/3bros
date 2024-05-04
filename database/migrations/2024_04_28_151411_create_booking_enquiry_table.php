@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('venue')->nullable();
             $table->string('mobile')->nullable();
             $table->string('message')->nullable();
+            $table->string('type')->nullable();
             $table->date('date')->useCurrent();
             $table->timestamps();
         });

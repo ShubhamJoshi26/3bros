@@ -100,9 +100,12 @@ class PlaceTypeController extends Controller
         $PlaceData->on_home_page = $request->on_home_page;
         if($request->hasFile('thumbnail'))
         {
+            $title = str_replace(' ', '-', $request->title);
+            $title = preg_replace('/[^A-Za-z0-9\-]/', '', $title);
+            $title = preg_replace('/-+/', '-', $title);
             $name = time().rand(1,50).'.'.$request->file('thumbnail')->extension();
-            $request->file('thumbnail')->move(public_path('uploads/place/'.str_replace(' ','-',$request->title).'/thumbnail'), $name); 
-            $path = 'uploads/place/'.str_replace(' ','-',$request->title).'/thumbnail/'.$name; 
+            $request->file('thumbnail')->move(public_path('uploads/place/'.$title.'/thumbnail'), $name); 
+            $path = 'uploads/place/'.$title.'/thumbnail/'.$name; 
             $PlaceData->thumbnail = $path;
         }
         if($PlaceData->save())

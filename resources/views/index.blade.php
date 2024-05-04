@@ -1263,7 +1263,7 @@
                                         </div>                      
                                     @endif
                                     <form id="contactform" class="row contactform wrap-form clearfix" method="post"
-                                        action="{{route('submitenquiry')}}" novalidate="novalidate">
+                                        action="{{route('submitenquiry')}}">
                                         @csrf
                                         <input type="hidden" name="type" id="type" value="enquiry">
                                         <label class="col-md-6">

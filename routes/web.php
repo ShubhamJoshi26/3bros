@@ -74,6 +74,14 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('event/create',[EventController::class,'CreateEvent']);
     Route::get('event/delete',[EventController::class,'DeleteEvent']);
     ///Event Routes End/////
+    
+    ///Foter Menu Routes Start////
+    Route::get('footermenu/list',[EventController::class,'EventList']);
+    Route::get('footermenu/edit',[EventController::class,'EditEvent']);
+    Route::get('footermenu/add',[EventController::class,'AddEvent']);
+    Route::post('footermenu/create',[EventController::class,'CreateEvent']);
+    Route::get('footermenu/delete',[EventController::class,'DeleteEvent']);
+    ///Foter Menu Routes End/////
 });
     //Front Routes///
     Route::get('/',[FrontController::class,'index']);

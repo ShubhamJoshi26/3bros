@@ -69,24 +69,35 @@
                                         each one.
                                     </p>
                                 </div>
+                                @if (session('success'))
+                                    <div class="alert alert-success m-3" role="alert">
+                                    <div  role="alert">
+                                            {{ session('success') }}
+                                            </div>
+                                    </div>                      
+                                @endif
                                 <!-- section title end -->
-                                <form id="contactform" class="row contactform wrap-form clearfix" method="post" action="{{route('submitenquiry')}}" novalidate="novalidate">
+                                <form id="contactform" class="row contactform wrap-form clearfix" method="post" action="{{route('submitenquiry')}}">
                                 @csrf
                                 <input type="hidden" id="type" name="type" value="booking">
                                 <input type="hidden" id="venue" name="venue" value="{{$venue['title']}}">
                                 <input type="hidden" id="message" name="message" value="for booking">
                                     <label class="col-md-6">
                                         <i class="ti ti-user"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="name" type="text" value="" placeholder="Your Name:*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="name" type="text" value="" placeholder="Your Name:*" required></span>
+                                    </label>
+                                    <label class="col-md-6">
+                                        <i class="ti ti-user"></i>
+                                        <span class="ttm-form-control"><input class="text-input" name="email" type="email" value="" placeholder="Your Email:*" required></span>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-mobile"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="mobile" type="text" value="" placeholder="Your Number:*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="mobile" type="text" value="" placeholder="Your Number:*" required maxlength="10" minlength="10"></span>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-location-pin"></i>
                                         <select name="billing_state" id="" class="state_select select2-hidden-accessible">
-                                            <option value="">Select the Occasion</option>
+                                            <option>Select the Occasion</option>
                                             <option value="Birthday Party">Birthday Party</option>
                                             <option value="Anniversary">Anniversary</option>
                                             <option value="Weddings">Weddings</option>
@@ -94,18 +105,18 @@
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-comment"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="nop" type="text" value="" placeholder="No. Of Guest:*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="nop" type="text" value="" placeholder="No. Of Guest:*" required></span>
                                     </label>
                                     </label>
                                     <label class="col-md-6">
                                         <i class="ti ti-comment"></i>
-                                        <span class="ttm-form-control"><input class="text-input" name="date" type="datetime-local" value="" placeholder="*" required="required"></span>
+                                        <span class="ttm-form-control"><input class="text-input" name="date" type="datetime-local" value="" placeholder="*" required></span>
                                     </label>
                                     <!-- <label class="col-md-12">
                                        <i class="ti ti-comment"></i>
                                        <span class="ttm-form-control"><textarea class="text-area"
                                                name="message" placeholder="Your Message:*"
-                                               required="required"></textarea></span>
+                                               required></textarea></span>
                                        </label> -->
                                     <input name="submit" type="submit" value="Submit Now" class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-20" id="submit" title="Submit Now">
                                 </form>

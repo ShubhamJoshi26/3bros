@@ -13,16 +13,13 @@ class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
     public $name, $email, $sub, $mess;
     public function __construct($name, $email, $sub, $mess)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->sub = $sub;
-        $this->mess = $mess;
+    $this->name = $name;
+    $this->email = $email;
+    $this->sub = $sub;
+    $this->mess = $mess;
     }
 
     /**
@@ -41,7 +38,6 @@ class SendMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            // view: 'view.name',
             markdown: 'email_to_admin',
         );
     }

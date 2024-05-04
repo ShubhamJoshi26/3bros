@@ -37,12 +37,13 @@ class FrontController extends Controller
         $venue = $request->venue;
         $mobile = $request->mobile;
         $message = $request->message;
-        $nop = $request->nop??'';
+        $nop = $request->nop??0;
         $type = $request->type??''; 
         $data = array('name'=>$name,'email'=>$email,'venue'=>$venue,'mobile'=>$mobile,'message'=>$message,'nop'=>$nop,'type'=>$type);
         if(DB::table('booking_enquiry')->insert($data))
         {
-            return redirect(url()->previous())->with('success','Enquiry Recieved');
+            $sendmail = $this->sendClientMails($data);
+            return view('thankyou');
         }
         
     }

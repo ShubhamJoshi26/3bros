@@ -37,6 +37,15 @@
                                         @endforeach
                                     </div>
                                 </div>
+                                <div class="img-select">
+                                    @foreach($images as $img)
+                                    <div class="img-item">
+                                        <a href="#" data-id="1">
+                                            <img src="{{URL::asset('public'.$img['path'])}}" style="width:100%; max-width:100%;" alt="Banquet Hall Images">
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
                             <!-- card right -->
                         </div>
@@ -109,7 +118,7 @@
                     <aside class="widget widget-nav-menu box-shadow">
                         <ul class="widget-menu">
                             @foreach($allvenue as $vn)
-                                <li><a href="/venue-details/{{$vn['id']}}">{{$vn['title']}}</a></li>
+                            <li><a href="/venue-details/{{$vn['id']}}">{{$vn['title']}}</a></li>
                             @endforeach
                         </ul>
                     </aside>
@@ -140,8 +149,7 @@
                     <h5 class="ttm-pf-single-related-title">Related Projects</h5>
                     <div class="row">
                         @foreach($allvenue as $k => $van)
-                        @if($k<=2)
-                        <div class="col-lg-4 col-md-6">
+                        @if($k<=2) <div class="col-lg-4 col-md-6">
                             <!-- featured-imagebox -->
                             <div class="featured-imagebox ttm-box-view-top-image featured-imagebox-portfolio mb-30">
                                 <div class="featured-portfolio-item">
@@ -171,14 +179,14 @@
                                 <!-- featured-bottom-content END -->
                             </div>
                             <!-- featured-imagebox END -->
-                        </div>
-                        @endif
-                        @endforeach
                     </div>
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>
-    </section>
+</div>
+</section>
 </div>
 <script>
     const imgs = document.querySelectorAll('.img-select a');

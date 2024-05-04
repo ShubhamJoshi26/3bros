@@ -1265,6 +1265,7 @@
                                     <form id="contactform" class="row contactform wrap-form clearfix" method="post"
                                         action="{{route('submitenquiry')}}" novalidate="novalidate">
                                         @csrf
+                                        <input type="hidden" name="type" id="type" value="enquiry">
                                         <label class="col-md-6">
                                             <i class="ti ti-user"></i>
                                             <span class="ttm-form-control"><input class="text-input" name="name"

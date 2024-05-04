@@ -23,10 +23,12 @@ class ImageController extends Controller
        {
             foreach($data->file('images') as $file)
             {
-                
+                $title = str_replace(' ', '-', $data->title);
+                $title = preg_replace('/[^A-Za-z0-9\-]/', '', $title);
+                $title = preg_replace('/-+/', '-', $title);
                 $name = time().rand(1,50).'.'.$file->extension();
-                $file->move(public_path('/uploads/'.$folder.'/'.str_replace(' ','-',$data->title).'/images/'), $name); 
-                $path = '/uploads/'.$folder.'/'.str_replace(' ','-',$data->title).'/images/'.$name; 
+                $file->move(public_path('/uploads/'.$folder.'/'.$title.'/images/'), $name); 
+                $path = '/uploads/'.$folder.'/'.$title.'/images/'.$name; 
                 $images = new Images;
                 $images->path = $path;
                 $images->item_id = $item_id;

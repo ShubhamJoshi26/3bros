@@ -5,14 +5,14 @@
             <div class="title-box text-center">
                 <div class="container">
                     <div class="page-title-heading">
-                        <h1 class="title">Banquets In Noida</h1>
+                        <h1 class="title">{{str_replace('-',' ',$title)}}</h1>
                         <p class="ttm-textcolor-white">We Here You Want A Party?</p>
                     </div>
                     <div class="breadcrumb-wrapper">
                         <div class="container">
                             <span><a title="Homepage" href="#"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a></span>
                             <span class="ttm-bread-sep ttm-textcolor-white"> &nbsp; ⁄ &nbsp;</span>
-                            <span class="ttm-textcolor-white"> Banquets in Noida</span>
+                            <span class="ttm-textcolor-white">{{str_replace('-',' ',$title)}}</span>
                         </div>
                     </div>
                 </div>
@@ -50,12 +50,13 @@
                         <div class="col-lg-12">
                             <div class=" section-title clearfix">
                                 <h4>GREAT PROVIDE #3BROS</h4>
-                                <h2 class="title">#3BROS Banquets & Farmhouse In Noida</h2>
-                                <div class="title-img"><img src="images/ds-1.png" alt="underline-img"></div>
+                                <h2 class="title">{{str_replace('-',' ',$title)}}</h2>
+                                <div class="title-img"><img src="{{URL::asset('public/images/ds-1.png')}}" alt="underline-img"></div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        @if(!empty($venu))
                         @foreach($venue as $vn)
                         <div class="col-md-6 col-lg-4">
                             <div class="featured-imagebox static-title mb-20">
@@ -85,6 +86,9 @@
                             </div>
                         </div>
                         @endforeach
+                        @else
+                        <h2>{{'No Banquets Found In '.str_replace('-',' ',$title)}}</h2>
+                        @endif
                     </div>
                 </div>
             </section>

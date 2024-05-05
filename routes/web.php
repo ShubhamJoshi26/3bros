@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\FooterMenuController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -76,11 +77,11 @@ Route::group(['prefix' => 'admin'], function(){
     ///Event Routes End/////
     
     ///Foter Menu Routes Start////
-    Route::get('footermenu/list',[EventController::class,'EventList']);
-    Route::get('footermenu/edit',[EventController::class,'EditEvent']);
-    Route::get('footermenu/add',[EventController::class,'AddEvent']);
-    Route::post('footermenu/create',[EventController::class,'CreateEvent']);
-    Route::get('footermenu/delete',[EventController::class,'DeleteEvent']);
+    Route::get('footermenu/list',[FooterMenuController::class,'allMenu'])->name('allfootermenu');
+    Route::get('footermenu/edit',[FooterMenuController::class,'EditMenu']);
+    Route::get('footermenu/add',[FooterMenuController::class,'AddMenu']);
+    Route::post('footermenu/create',[FooterMenuController::class,'CreateMenu']);
+    Route::get('footermenu/delete',[FooterMenuController::class,'DeleteMenu']);
     ///Foter Menu Routes End/////
 });
     //Front Routes///
@@ -93,3 +94,4 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/blogs',[FrontController::class,'allBlogs'])->name('allblogs');
     Route::any('/blog-detail/{id}',[FrontController::class,'blogDetails']);
     Route::any('/venue-details/{id}',[FrontController::class,'vanueDetails']);
+    Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);

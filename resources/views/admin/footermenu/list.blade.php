@@ -27,6 +27,7 @@
                                 <tr role="row">
                                     <th style="width:10%;">S. No.</th>
                                     <th style="width:35%">Menu Title</th>
+                                    <th style="width:35%">Location</th>
                                     <th style="width:35%">Status</th>
                                     <th style="width:20%">Action</th>
                                 </tr>
@@ -52,10 +53,11 @@
           var table = $('#category_table').DataTable({
               processing: true,
               serverSide: true,
-              ajax: "/admin/fotermenu/list",
+              ajax: "/admin/footermenu/list",
               columns: [
                   {data: 'id', name: 'id'},
                   {data: 'title', name: 'title'},
+                  {data: 'location', name: 'location'},
                   {data: 'status', name: 'status'},
                   {data: 'action', name: 'action'},
               ]

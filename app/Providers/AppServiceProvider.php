@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\FooterMenu;
 use App\Models\Menu;
 use Illuminate\Support\Facades\View as FacadesView;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         FacadesView::composer('*',function($view){
             $view->with('frontmenu',Menu::MenuList());
+            $view->with('footermenu',FooterMenu::MenuList());
         });
     }
 }

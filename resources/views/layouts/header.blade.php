@@ -286,64 +286,18 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                <div class="widget widget_nav_menu clearfix">
-                                    <h4 class="widget-title">Banquets In East Delhi </h4>
-                                    <ul class="menu-footer-services">
-                                        <li><a href="#">Banquets In Anand Vihar</a></li>
-                                        <li><a href="#">Banquets In karkardooma </a></li>
-                                        <li><a href="#">Banquets In Laxmi Nagar</a></li>
-                                        <li><a href="#">Banquets In Loni Border</a></li>
-                                        <li><a href="#">Banquets In Loni Border</a></li>
-                                        <li><a href="#">Banquets In Mayur Vihar</a></li>
-                                        <li><a href="#">Banquets In Patparganj</a></li>
-                                         <li><a href="#">Banquets In shastri nagar </a></li>
-
-                                    </ul>
+                            @foreach($footermenu as $k=> $menu)
+                                <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                    <div class="widget widget_nav_menu clearfix">
+                                        <h4 class="widget-title">{{$k}} </h4>
+                                        <ul class="menu-footer-services">
+                                            @foreach($menu as $submenu)
+                                                <li><a href="banquetlist/{{str_replace(' ','-',$submenu->title)}}">{{$submenu->title}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                <div class="widget widget-out-link clearfix ">
-                                    <h4 class="widget-title">Banquets In Ghaziabad </h4>
-                                    <ul class="menu-footer-services">
-                                        <li><a href="#">Banquets In Govindpuram </a></li>
-                                        <li><a href="#">Banquets In Indrapuram</a></li>
-                                        <li><a href="#">Banquets In Kavi Nagar</a></li>
-                                        <li><a href="#">Banquets In Mohan Nagar</a></li>
-                                        <li><a href="#">Banquets In Raj Nagar Ext.</a></li>
-                                        <li><a href="#">Banquets In Shyam Park</a></li>
-                                        <li><a href="#">Banquets In Shurya Nagar</a></li>
-                                        <li><a href="#">Banquets In Vasundhra</a></li>
-                                        
-                                          
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                <div class="widget widget-out-link clearfix ">
-                                    <h4 class="widget-title">Banquets In Noida</h4>
-                                    <ul class="menu-footer-services">
-                                        <li><a href="#">Banquets In Mayur Vihar</a></li>
-                                         <li><a href="#">Banquets In Greater Noida</a></li>
-                                         <li><a href="#">Banquets In ExpressWay</a></li>
-                                        <li><a href="#">Banquets In Noida Ext</a></li>
-                                         <li><a href="#">Banquets In Noida Sec 104</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 18</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 29</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 37</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 63</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 75</a></li>
-                                          <li><a href="#">Banquets In Noida Sec 135</a></li>
-                                     
-                                       
-                                         
-
-                                    </ul>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                 </div>

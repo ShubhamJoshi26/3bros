@@ -21,9 +21,10 @@ class FrontController extends Controller
     public function allVenues()
     {
         $venue = PlaceType::all()->toArray();
+        $title = 'Banquets-In-Delhi';
         if(!empty($venue))
         {
-            return view('venue_list',compact('venue'));
+            return view('venue_list',compact('venue','title'));
         }
         else
         {
@@ -66,5 +67,12 @@ class FrontController extends Controller
         $venue = PlaceType::find($id)->toArray();
         $allvenue = PlaceType::all()->toArray();
         return view('venue_details',compact('images','venue','allvenue'));
+    }
+    function banquetlist($title)
+    {
+        $venuein = explode('-',$title);
+        $location = end($venuein);
+        $venue = PlaceType::where('address','like',"$location")->get();
+        return view('venue_list',compact('venue','title'));
     }
 }

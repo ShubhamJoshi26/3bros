@@ -461,12 +461,12 @@ $type = Session()->get('type');
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Trash Projects</a></li> -->
 								</ul>
 							</li>
-							<li> <a class="has-arrow" href="#">Manege Testimonials</a>
+							<li> <a class="has-arrow" href="#">Manege Footer Menu</a>
 								<ul>
-									<li> <a href="/website/testimonial/list"><i class="bx bx-right-arrow-alt"></i>Testimonials List</a></li>
-									<li> <a href="/website/testimonial/add"><i class="bx bx-right-arrow-alt"></i>Add Testimonials</a></li>
-									<li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Delete Testimonials</a></li>
-									<li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Trash Testimonials</a></li>
+									<li> <a href="/admin/footermenu/list"><i class="bx bx-right-arrow-alt"></i>Footer Menu List</a></li>
+									<li> <a href="/admin/footermenu/add"><i class="bx bx-right-arrow-alt"></i>Add Footer Menu</a></li>
+									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Delete Testimonials</a></li> -->
+									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Trash Testimonials</a></li> -->
 								</ul>
 							</li>
 						</ul>

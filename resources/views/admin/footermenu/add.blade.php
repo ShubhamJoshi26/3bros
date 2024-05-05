@@ -27,7 +27,16 @@
                 <input type='hidden' name='id' value='<?php if(isset($menu) && $menu['id']!=''){echo $menu['id'];}?>'/>
                 <div class="col-12 col-lg-6">
                   <label for="" class="form-label">Location</label>
-                  {!!$location!!}
+                  <select name="location" id="location" class="form-control select2">
+                    <option value="Delhi">Delhi</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                  </select>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Position</label>
+                  <input type="text" required class="form-control" id="position" 
+                  value="<?php if(isset($menu) && $menu['position']!=''){echo $menu['position'];}?>" placeholder="Location Position" name="position">
                 </div>
                 <div class="col-12 col-lg-6">
                   <label for="" class="form-label">Title</label>

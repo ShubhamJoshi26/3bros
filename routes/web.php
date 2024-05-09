@@ -106,3 +106,10 @@ Route::group(['prefix' => 'admin'], function(){
     Route::any('/venue-details/{id}',[FrontController::class,'vanueDetails']);
     Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);
     Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
+
+
+    ////Static page routes
+    Route::get('anniversary-celebration',function(){return view('anniversary-celebration');});
+    Route::get('wow-birthday-theme',function(){return view('wow-birthday-theme');});
+    Route::get('why-choose',function(){return view('why-choose');});
+    Route::get('best-party',function(){return view('best-party');});

@@ -121,7 +121,7 @@ class Menu extends Model
 
                     $list .= '<li class="dropdown"><a href="' . $urlm . '" id = "menu_'.$pr->menuid.'">' . $pr->name . '</a>';
 
-                    $list .= "<ul class='sub-menu'>";
+                    $list .= "<ul class=''>";
 
                     $childthird = DB::table('menus')
                         ->where('sub_id', $pr->menuid)

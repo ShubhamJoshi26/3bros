@@ -56,8 +56,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        @if(!empty($venu))
-                        @foreach($venue as $vn)
+                        @if(!empty($venue))
+                        @foreach($venue->toArray() as $vn)
                         <div class="col-md-6 col-lg-4">
                             <div class="featured-imagebox static-title mb-20">
                                 <div class="featured-thumbnail">
@@ -87,7 +87,7 @@
                         </div>
                         @endforeach
                         @else
-                        <h2>{{'No Banquets Found In '.str_replace('-',' ',$title)}}</h2>
+                        <h2>{{'No '.str_replace('-',' ',$title)}}</h2>
                         @endif
                     </div>
                 </div>

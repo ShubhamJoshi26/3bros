@@ -47,5 +47,15 @@ class ImageController extends Controller
         $allImages = Images::where('item_id',$id)->where('table_name',$table)->get()->toArray();
         return $allImages;
    }
-      
+
+   public static function deleteAllImages($id)
+   {
+        $deleteallimages = Images::where('item_id',$id)->delete();
+        return $deleteallimages;
+   }
+   public static function deleteimage($id)
+   {
+        $deletimage = Images::destroy($id);
+        return $deletimage;
+   }
 }

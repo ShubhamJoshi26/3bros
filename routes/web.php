@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FooterMenuController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
@@ -83,6 +84,15 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('footermenu/create',[FooterMenuController::class,'CreateMenu']);
     Route::get('footermenu/delete',[FooterMenuController::class,'DeleteMenu']);
     ///Foter Menu Routes End/////
+
+    ////Image Gallery Routes Start//////
+    Route::get('/gallery/list',[GalleryController::class,'allImages']);
+    Route::get('/gallery/add',[GalleryController::class,'addImages']);
+    Route::get('/gallery/edit',[GalleryController::class,'addImages']);
+    Route::post('/gallery/create',[GalleryController::class,'createGallery']);
+    Route::get('gallery/delete',[GalleryController::class,'deleteGallery']);
+    Route::get('gallery/image/delete',[GalleryController::class,'deleteImage']);
+    ////Image Gallery Routes End///////
 });
     //Front Routes///
     Route::get('/',[FrontController::class,'index']);
@@ -95,3 +105,11 @@ Route::group(['prefix' => 'admin'], function(){
     Route::any('/blog-detail/{id}',[FrontController::class,'blogDetails']);
     Route::any('/venue-details/{id}',[FrontController::class,'vanueDetails']);
     Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);
+    Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
+
+
+    ////Static page routes
+    Route::get('anniversary-celebration',function(){return view('anniversary-celebration');});
+    Route::get('wow-birthday-theme',function(){return view('wow-birthday-theme');});
+    Route::get('why-choose',function(){return view('why-choose');});
+    Route::get('best-party',function(){return view('best-party');});

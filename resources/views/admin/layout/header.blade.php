@@ -445,8 +445,8 @@ $type = Session()->get('type');
 							</li>
 							<li> <a class="has-arrow" href="#">Manege Gallery</a>
 								<ul>
-									<li> <a href="/projecttype/list"><i class="bx bx-right-arrow-alt"></i>All Gallery</a></li>
-									<li> <a href="/projecttype/add"><i class="bx bx-right-arrow-alt"></i>Add Gallery</a></li>
+									<li> <a href="/admin/gallery/list"><i class="bx bx-right-arrow-alt"></i>All Gallery</a></li>
+									<li> <a href="/admin/gallery/add"><i class="bx bx-right-arrow-alt"></i>Add Gallery</a></li>
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Edit Blogs</a></li> -->
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Delete Blogs</a></li> -->
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Trash Projects</a></li> -->

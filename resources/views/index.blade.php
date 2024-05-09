@@ -938,25 +938,27 @@
                 <div class="container">
                     <!-- row -->
                     <div class="row multi-columns-row ttm-boxes-spacing-5px style2 mt_65">
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
+                        @if(isset($gallery) && !empty($gallery))
+                            @foreach($gallery as $gal)
+                            <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
                             <!-- featured-image-box -->
                             <div class="featured-imagebox featured-imagebox-portfolio">
                                 <!-- featured-thumbnail-->
                                 <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-1.jpg')}}"
+                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/'.$gal->thumbnail)}}"
                                             alt="image"></a>
                                 </div><!-- featured-thumbnail END-->
                                 <!-- ttm-box-view-overlay -->
                                 <div class="ttm-box-view-overlay">
                                     <div class="ttm-media-link">
                                         <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="birthday" href="images/gallery/gallery-1.jpg" data-rel="prettyPhoto">
+                                            title="birthday" href="{{URL::asset('public/'.$gal->thumbnail)}}" data-rel="prettyPhoto">
                                             <i class="ti ti-search"></i>
                                         </a>
                                     </div>
                                     <div class="featured-content featured-content-portfolio">
                                         <div class="featured-title">
-                                            <h5><a href="#">Birthday Celebration</a></h5>
+                                            <h5><a href="#">{{$gal->title}}</a></h5>
                                         </div>
                                         <!-- <span class="category">
                                             <a href="#">Private Party</a>
@@ -965,145 +967,13 @@
                                 </div><!-- ttm-box-view-overlay end-->
                             </div><!-- featured-item -->
                         </div>
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
-                            <!-- featured-image-box -->
-                            <div class="featured-imagebox featured-imagebox-portfolio">
-                                <!-- featured-thumbnail-->
-                                <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-5.jpg')}}"
-                                            alt="image"></a>
-                                </div><!-- featured-thumbnail END-->
-                                <!-- ttm-box-view-overlay -->
-                                <div class="ttm-box-view-overlay">
-                                    <div class="ttm-media-link">
-                                        <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="Wow Birthday Theme" href="images/gallery/gallery-5.jpg"
-                                            data-rel="prettyPhoto">
-                                            <i class="ti ti-search"></i>
-                                        </a>
-                                    </div>
-                                    <div class="featured-content featured-content-portfolio">
-                                        <div class="featured-title">
-                                            <h5><a href="#">Birthday Events</a></h5>
-                                        </div>
-
-                                    </div>
-                                </div><!-- ttm-box-view-overlay end-->
-                            </div><!-- featured-item -->
-                        </div>
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
-                            <!-- featured-image-box -->
-                            <div class="featured-imagebox featured-imagebox-portfolio">
-                                <!-- featured-thumbnail-->
-                                <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-2.jpg')}}"
-                                            alt="image"></a>
-                                </div><!-- featured-thumbnail END-->
-                                <!-- ttm-box-view-overlay -->
-                                <div class="ttm-box-view-overlay">
-                                    <div class="ttm-media-link">
-                                        <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="Foods" href="images/gallery/gallery-2.jpg" data-rel="prettyPhoto">
-                                            <i class="ti ti-search"></i>
-                                        </a>
-                                    </div>
-                                    <div class="featured-content featured-content-portfolio">
-                                        <div class="featured-title">
-                                            <h5><a href="#">Foods</a></h5>
-                                        </div>
-
-                                    </div>
-                                </div><!-- ttm-box-view-overlay end-->
-                            </div><!-- featured-item -->
-                        </div>
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
-                            <!-- featured-image-box -->
-                            <div class="featured-imagebox featured-imagebox-portfolio">
-                                <!-- featured-thumbnail-->
-                                <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-3.jpg')}}"
-                                            alt="image"></a>
-                                </div><!-- featured-thumbnail END-->
-                                <!-- ttm-box-view-overlay -->
-                                <div class="ttm-box-view-overlay">
-                                    <div class="ttm-media-link">
-                                        <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="Internal View" href="images/gallery/gallery-3.jpg"
-                                            data-rel="prettyPhoto">
-                                            <i class="ti ti-search"></i>
-                                        </a>
-                                    </div>
-                                    <div class="featured-content featured-content-portfolio">
-                                        <div class="featured-title">
-                                            <h5><a href="#">Internal View</a></h5>
-                                        </div>
-                                        <!-- <span class="category">
-                                            <a href="#">Birthday Party</a>
-                                        </span> -->
-                                    </div>
-                                </div><!-- ttm-box-view-overlay end-->
-                            </div><!-- featured-item -->
-                        </div>
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
-                            <!-- featured-image-box -->
-                            <div class="featured-imagebox featured-imagebox-portfolio">
-                                <!-- featured-thumbnail-->
-                                <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-6.jpg')}}"
-                                            alt="image"></a>
-                                </div><!-- featured-thumbnail END-->
-                                <!-- ttm-box-view-overlay -->
-                                <div class="ttm-box-view-overlay">
-                                    <div class="ttm-media-link">
-                                        <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title="Wedding Events" src="{{URL::asset('public/front/images/gallery/gallery-6.jpg')}}"
-                                            href="https://youtu.be/HyqYly6o0DQ?si=pomzwyQ2vspmW6NM"
-                                            data-rel="prettyPhoto">
-                                            <i class="ti ti-control-play"></i>
-                                        </a>
-                                    </div>
-                                    <div class="featured-content featured-content-portfolio">
-                                        <div class="featured-title">
-                                            <h5><a href="#"> Wedding Events</a></h5>
-                                        </div>
-
-                                    </div>
-                                </div><!-- ttm-box-view-overlay end-->
-                            </div><!-- featured-item -->
-                        </div>
-                        <div class="ttm-box-col-wrapper col-lg-4 col-md-6">
-                            <!-- featured-image-box -->
-                            <div class="featured-imagebox featured-imagebox-portfolio">
-                                <!-- featured-thumbnail-->
-                                <div class="featured-thumbnail">
-                                    <a href="#"> <img class="img-fluid" src="{{URL::asset('public/front/images/gallery/gallery-8.jpg')}}"
-                                            alt="image"></a>
-                                </div><!-- featured-thumbnail END-->
-                                <!-- ttm-box-view-overlay -->
-                                <div class="ttm-box-view-overlay">
-                                    <div class="ttm-media-link">
-                                        <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                            title=" Birthday Party" href="images/gallery/gallery-8.jpg"
-                                            data-rel="prettyPhoto">
-                                            <i class="ti ti-search"></i>
-                                        </a>
-                                    </div>
-                                    <div class="featured-content featured-content-portfolio">
-                                        <div class="featured-title">
-                                            <h5><a href="#"> Birthday Party</a></h5>
-                                        </div>
-                                        <span class="category">
-                                            <a href="#">Birthday Party</a>
-                                        </span>
-                                    </div>
-                                </div><!-- ttm-box-view-overlay end-->
-                            </div><!-- featured-item -->
-                        </div>
+                            @endforeach
+                        @endif
                     </div><!-- row end -->
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-50"
-                                href="#">View More Gallery</a>
+                                href="{{route('allgallery')}}">View More Gallery</a>
                         </div>
                     </div>
                 </div>

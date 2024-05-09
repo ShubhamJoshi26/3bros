@@ -289,10 +289,10 @@
                             @foreach($footermenu as $k=> $menu)
                                 <div class="widget-area col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                     <div class="widget widget_nav_menu clearfix">
-                                        <h4 class="widget-title">{{$k}} </h4>
+                                        <h4 class="widget-title">Banquets in {{$k}} </h4>
                                         <ul class="menu-footer-services">
                                             @foreach($menu as $submenu)
-                                                <li><a href="banquetlist/{{str_replace(' ','-',$submenu->title)}}">{{$submenu->title}}</a></li>
+                                                <li><a href="/banquetlist/{{str_replace(' ','-',$submenu->title)}}">{{$submenu->title}}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>

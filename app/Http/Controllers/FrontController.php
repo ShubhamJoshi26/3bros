@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Events;
+use App\Models\Gallery;
 use App\Models\Images;
 use App\Models\PlaceType;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class FrontController extends Controller
         $event = Events::take(5)->get()->toArray();
         $blog = Blog::take(3)->get()->toArray();
         $venue = PlaceType::where('category','like','%wedding%')->orderBy('position','asc')->get()->take(3)->toArray();
-        return view('index',compact('venue','event','blog'));
+        $gallery = Gallery::take(6)->get();
+        return view('index',compact('venue','event','blog','gallery'));
     }
     public function allVenues()
     {
@@ -70,9 +72,14 @@ class FrontController extends Controller
     }
     function banquetlist($title)
     {
-        $venuein = explode('-',$title);
-        $location = end($venuein);
-        $venue = PlaceType::where('address','like',"$location")->get();
-        return view('venue_list',compact('venue','title'));
+        $venuein = str_replace('banquets-in-','',strtolower($title));
+        $location = str_replace('-',' ',$venuein);
+        $venue = PlaceType::where('address','like',"%$location%")->get();
+        return view('venue_list',compact('venue','title')); 
+    }
+    function allGallery()
+    {
+        $gallery = Gallery::all();
+        return view('galley',compact('gallery'));
     }
 }

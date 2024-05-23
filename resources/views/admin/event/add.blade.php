@@ -68,7 +68,7 @@
                   value="<?php if(isset($event) && $event['price']!=''){echo $event['price'];}?>" placeholder="Ticket Price" name="price">
                 </div>
                 <div class="col-12 col-lg-6">
-                  <label for="" class="form-label">Meta Title</label>
+                  <label for="" class="form-label">Meta Keyword</label>
                   <input type="text" required class="form-control" id="title" 
                   value="<?php if(isset($event['metatitle']) && $event['metatitle']!=''){echo $event['metatitle'];}?>" placeholder="Meta Title" name="metatitle">
                 </div>

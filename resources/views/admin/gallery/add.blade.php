@@ -67,7 +67,7 @@
             <div class="row">
             @foreach($galleryimages as $img)
             <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="{{URL::asset($img['path'])}}" alt="Card image cap">
+              <img class="card-img-top" src="{{URL::asset('public/'.$img['path'])}}" alt="Card image cap">
               <div class="card-body">
                 <a href="/admin/gallery/image/delete?id={{$img['id']}}" class="btn btn-primary">Delete</a>
               </div>

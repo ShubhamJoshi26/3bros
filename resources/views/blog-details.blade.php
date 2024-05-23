@@ -5,7 +5,7 @@
             <div class="title-box text-center">
                 <div class="container">
                     <div class="page-title-heading">
-                        <h1 class="title">{{strtoupper($blog['title'])}}</h1>
+                        <h1 class="title">{{strtoupper($blog[0]['title'])}}</h1>
                     </div>
                     <div class="breadcrumb-wrapper">
                         <div class="container">
@@ -14,7 +14,7 @@
                             <span class="ttm-bread-sep ttm-textcolor-white"> &nbsp; ⁄ &nbsp;</span>
                             <span><a title="" href="#">&nbsp;&nbsp;Blog</a></span>
                             <span class="ttm-bread-sep ttm-textcolor-white"> &nbsp; ⁄ &nbsp;</span>
-                            <span class="ttm-textcolor-white">{{$blog['title']}}</span>
+                            <span class="ttm-textcolor-white">{{$blog[0]['title']}}</span>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="col-lg-9 content-area">
                             <article class="post ttm-blog-classic">
                                 <div class="post-image ttm_single_image_wrapper">
-                                    <img class="img-fluid" src="{{URL::asset('public/'.$blog['image_path'])}}" alt="">
+                                    <img class="img-fluid" src="{{URL::asset('public/'.$blog[0]['image_path'])}}" alt="">
                                 </div>
                                 <div class="ttm-blog-classic-content single-blog">
                                     <div class="post-meta">
@@ -40,7 +40,7 @@
                                             <!-- <li><i class="ti ti-comment"></i><a href="#">2,comments</a></li> -->
                                         </ul>
                                     </div>
-                                    {!!$blog['description']!!}
+                                    {!!$blog[0]['description']!!}
                             
                                 </div>
                             </article>
@@ -63,8 +63,8 @@
                                 <ul class="ttm-recent-post-list">
                                     @foreach($blogs as $num=>$bg)
                                     <li class="ttm-recent-post-list-li clearfix">
-                                        <a href="/blog-detail/{{$bg['id']}}"><img src="{{URL::asset('public/'.$bg['image_path'])}}" alt="blog-img"></a>
-                                        <a href="/blog-detail/{{$bg['id']}}">{{$bg['title']}}</a>
+                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($bg['title']))}}"><img src="{{URL::asset('public/'.$bg['image_path'])}}" alt="blog-img"></a>
+                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($bg['title']))}}">{{$bg['title']}}</a>
                                         <span class="post-date">{{date('M d, Y',strtotime($bg['created_at']))}}</span>
                                     </li>
                                     @endforeach
@@ -73,6 +73,11 @@
                             <aside class="widget widget-Categories">
                                 <h3 class="widget-title">Categories</h3>
                                 <ul class="widget-menu">
+                                @if(!empty($blogcategory))
+                                        @foreach (json_decode($blogcategory,true) as $cat)
+                                        <li><a href="/blogs?category={{$cat['title']}}">{{$cat['title']}}</a></li>                                                  
+                                        @endforeach
+                                    @endif
                                     <!-- <li><a href="#">Engagement</a></li>
                                     <li><a href="#">Event Tips</a></li>
                                     <li><a href="#">Events for Kids</a></li>

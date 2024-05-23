@@ -6,9 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="keywords" content="">
-    <meta name="description" content="" />
+    <meta name="keywords" content="{{$metadata['metakeywords']}}">
+    <meta name="description" content="{{$metadata['metadescription']}}" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#3Bros</title>
@@ -76,7 +75,7 @@
                             <!--<li class="list-inline-item"><i class="fa fa-map-marker"></i>Plot H1A/19, Near, Electronic City Metro Sta Rd, above Dominos, H Block, Sector 63-->
                               
                              <li class="list-inline-item"><strong><i class="fa fa-envelope-o"></i> </strong>
-                                    <a href="mailto:sales@3bros.in"> sales@3bros.in</a>, <a href="mailto:3brosreviews@gmail.com"> 3brosreviews@gmail.com</a>
+                                    <a href="mailto:sales@3bros.in"> sales@3bros.in</a>
                                 </li> <!--</li>-->
                             <li class="list-inline-item"><strong><i class="fa fa-phone"></i> </strong><a
                                     href="tel:+91-72109-91313">+91-7210991313</a>,
@@ -281,7 +280,7 @@
                                     <ul class="widget-contact">
                                         <li><i class="fa fa-map-marker"></i>Plot H1A/19, Near, Electronic City Metro Sta Rd, above Dominos, H Block, Sector 63, Noida, Uttar Pradesh 201301</li>
                                         <li><i class="fa fa-envelope-o"></i><a
-                                                href="mailto:sales@3bros.in">sales@3bros.in</a></br> <a href="mailto:3brosreviews@gmail.com"> 3brosreviews@gmail.com</a></li>
+                                                href="mailto:sales@3bros.in">sales@3bros.in</a></li>
                                         <li><i class="fa fa-phone"></i><a href="tel:+91-07210991313">+91-07210991313</a></br><a href="tel:+91-9058112967">+91-9058112967</a></li>
                                     </ul>
                                 </div>
@@ -292,7 +291,7 @@
                                         <h4 class="widget-title">Banquets in {{$k}} </h4>
                                         <ul class="menu-footer-services">
                                             @foreach($menu as $submenu)
-                                                <li><a href="/banquetlist/{{str_replace(' ','-',$submenu->title)}}">{{$submenu->title}}</a></li>
+                                                <li><a href="/banquetlist/{{str_replace(' ','-',strtolower($submenu->title))}}">{{$submenu->title}}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -373,7 +372,8 @@
     <script src="{{URL::asset('/front/js/numinate.min6959.js?ver=4.9.3')}}"></script>
     <script src="{{URL::asset('/front/js/main.js')}}"></script>
 
-
+    <!-- Google recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- Revolution Slider -->
     <script src="{{URL::asset('/front/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
     <script src="{{URL::asset('/front/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>

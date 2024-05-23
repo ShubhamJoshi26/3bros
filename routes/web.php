@@ -68,6 +68,14 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('category/create',[CategoryController::class,'CreateCategory']);
     Route::get('category/delete',[CategoryController::class,'DeleteCategory']);
     ///Category Routes End/////
+
+    ///Blog Category Routes Start////
+    Route::get('blog/category/list',[CategoryController::class,'BlogCategoryList']);
+    Route::get('blog/category/edit',[CategoryController::class,'EditBlogCategory']);
+    Route::get('blog/category/add',[CategoryController::class,'AddBlogCategory']);
+    Route::post('blog/category/create',[CategoryController::class,'CreateBlogCategory']);
+    Route::get('blog/category/delete',[CategoryController::class,'DeleteBlogCategory']);
+    ///Blog Category Routes End/////
     
     ///Event Routes Start////
     Route::get('event/list',[EventController::class,'EventList']);
@@ -98,18 +106,19 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/',[FrontController::class,'index']);
     Route::get('/allvenue',[FrontController::class,'allVenues'])->name('allvenue');
     Route::post('/submitenquiry',[FrontController::class,'submitenquiry'])->name('submitenquiry');
-    Route::get('/privacy-policy',function(){ return view('privacy-policy');})->name('privacy-policy');
-    Route::get('/terms-and-condition',function(){ return view('terms-and-condition');})->name('terms-and-condition');
-    Route::get('/disclaimer',function(){ return view('disclaimer');})->name('disclaimer');
     Route::get('/blogs',[FrontController::class,'allBlogs'])->name('allblogs');
-    Route::any('/blog-detail/{id}',[FrontController::class,'blogDetails']);
+    Route::any('/blog-detail/{title}',[FrontController::class,'blogDetails']);
     Route::any('/venue-details/{id}',[FrontController::class,'vanueDetails']);
     Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);
     Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
 
 
     ////Static page routes
-    Route::get('anniversary-celebration',function(){return view('anniversary-celebration');});
-    Route::get('wow-birthday-theme',function(){return view('wow-birthday-theme');});
-    Route::get('why-choose',function(){return view('why-choose');});
-    Route::get('best-party',function(){return view('best-party');});
+    Route::get('anniversary-celebration',[FrontController::class,'aniversary']);
+    Route::get('wow-birthday-theme',[FrontController::class,'birthday']);
+    Route::get('this-is-why-people-love-to-party-at-3bros',[FrontController::class,'whychoose']);
+    Route::get('why-3bros-is-best-party-hall-in-noida',[FrontController::class,'bestparty']);
+    Route::get('contact-us',[FrontController::class,'contactus']);
+    Route::get('/privacy-policy',[FrontController::class,'privacy'])->name('privacy-policy');
+    Route::get('/terms-and-condition',[FrontController::class,'termandcondition'])->name('terms-and-condition');
+    Route::get('/disclaimer',[FrontController::class,'disclaimer'])->name('disclaimer');

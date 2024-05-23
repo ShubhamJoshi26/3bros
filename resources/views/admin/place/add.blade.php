@@ -1,5 +1,4 @@
 @include('admin.layout.header')
-
 <div class="page-wrapper">
     <div class="page-content">
     @include('admin.layout.alert')
@@ -13,15 +12,15 @@
                                 <i class="bx bx-home-alt"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Manage Gallery</li>
-                        <li class="breadcrumb-item active" aria-current="page">Add Gallery</li>
+                        <li class="breadcrumb-item active" aria-current="page">Manage Places</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Place</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="card">
       <div class="card-body">
-            <form action="/admin/gallery/create" id="addtestimonials" method="post" enctype="multipart/form-data">
+            <form action="/admin/place/create" id="addtestimonials" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div class="row">
@@ -38,6 +37,34 @@
                   value="<?php if(isset($place) && $place['title']!=''){echo $place['title'];}?>" placeholder="Place Title" name="title">
                 </div>
                 <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Address</label>
+                  <input type="text" required class="form-control" id="title" 
+                  value="<?php if(isset($place) && $place['address']!=''){echo $place['address'];}?>" placeholder="Place Address" name="address">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Capacity</label>
+                  <input type="text" required class="form-control" id="title" 
+                  value="<?php if(isset($place) && $place['capacity']!=''){echo $place['capacity'];}?>" placeholder="Place Capacity" name="capacity">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Price</label>
+                  <input type="text" required class="form-control" id="title" 
+                  value="<?php if(isset($place) && $place['price']!=''){echo $place['price'];}?>" placeholder="Place Price" name="price">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Position</label>
+                  <input type="text" required class="form-control" id="title" 
+                  value="<?php if(isset($place) && $place['position']!=''){echo $place['position'];}?>" placeholder="Position" name="position">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Show On Home Page</label>
+                  <select name="on_home_page" id="on_home_page" class="form-control select2">
+                    <option value=""></option>
+                    <option value="yes" <?php if(isset($place['on_home_page']) && $place['on_home_page']=='yes'){echo "selected='selected'";}?>>Yes</option>
+                    <option value="no" <?php if(isset($place['on_home_page']) && $place['on_home_page']=='no'){echo "selected='selected'";}?>>No</option>
+                  </select>
+                </div>
+                <div class="col-12 col-lg-6">
                   <label for="" class="form-label">Thumbnail</label>
                   <input class="form-control" type="file" id="thumbnail" name="thumbnail">
                 </div>
@@ -45,8 +72,19 @@
                   <label for="" class="form-label">Images</label>
                   <input class="form-control" type="file" id="images" name="images[]" multiple>
                 </div>
+                <?php 
+                if(isset($place) && $place['thumbnail']!='')
+                {
+                  ?>
+
+                  <div class="col-12 col-lg-6">
+                  <a href="<?php echo URL::asset($place['thumbnail']); ?>">  <label for="" class="form-label mt-4"><?php if(isset($place) && $place['thumbnail']!=''){ $filename = explode('/',$place['thumbnail']); echo end($filename);}?></label></a>
+                  </div>
+                  <?php
+                }
+                ?>
                 <div class="col-12 col-lg-6">
-                  <label for="" class="form-label">Meta Title</label>
+                  <label for="" class="form-label">Meta Keyword</label>
                   <input type="text" required class="form-control" id="title" 
                   value="<?php if(isset($place['metatitle']) && $place['metatitle']!=''){echo $place['metatitle'];}?>" placeholder="Meta Title" name="metatitle">
                 </div>
@@ -69,13 +107,8 @@
                 </div>
                 </div>
             </form>
-
       </div>
         </div>
-
     </div>
 </div>
-
-
-
 @include('admin.layout.footer')

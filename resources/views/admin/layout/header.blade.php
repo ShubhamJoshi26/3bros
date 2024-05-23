@@ -420,6 +420,12 @@ $type = Session()->get('type');
 								<ul>
 									<li> <a href="/admin/blog/list"><i class="bx bx-right-arrow-alt"></i>All Blog</a></li>
 									<li> <a href="/admin/blog/add"><i class="bx bx-right-arrow-alt"></i>Add Blog</a></li>
+									<li> <a class="has-arrow" href="#">Manege Category</a>
+										<ul>
+											<li> <a href="/admin/blog/category/list"><i class="bx bx-right-arrow-alt"></i>All Blog Category</a></li>
+											<li> <a href="/admin/blog/category/add"><i class="bx bx-right-arrow-alt"></i>Add Blog Category</a></li>
+										</ul>
+									</li>
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Edit Blogs</a></li> -->
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Delete Blogs</a></li> -->
 									<!-- <li> <a href="javascript:();"><i class="bx bx-right-arrow-alt"></i>Trash Category</a></li> -->

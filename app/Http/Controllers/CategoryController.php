@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use DataTables;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables as FacadesDataTables;
+
 class CategoryController extends Controller
 {
     public function CategoryList()
@@ -104,6 +107,103 @@ class CategoryController extends Controller
     {
       $delete = Category::destroy($request->id);
       return redirect('/admin/category/list')->with('success','Category Deleted Successfully');
+    }
+    public function BlogCategoryList()
+    {
+        if(\request()->ajax()){
+            $data = DB::table('blog_category')->get();
+            return FacadesDataTables::of(json_decode($data,true))
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="/admin/blog/category/edit?id='.$row['id'].'" class="edit btn btn-success btn-sm">Edit</a> <a href="/admin/blog/category/delete?id='.$row['id'].'" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('admin/blog/category/list');
+    }
+    public function AddBlogCategory()
+    {
+        return view('admin/blog/category/add');
+    }
+
+    public function EditBlogCategory(Request $request)
+    {
+        $category = DB::table('blog_category')->where('id',$request->id)->get();
+        if(!empty($category))
+        {
+            $category = json_decode($category,true);
+            return view('admin/blog/category/add',['category'=>$category[0]]);
+        }
+        else
+        {
+            return redirect('/admin/blog/category/list')->with('error','Blog Not Found');
+        }
+    }
+
+    public function CreateBlogCategory(Request $request)
+    {
+        $validated = Validator::make($request->all(),[
+            'title'=>'required',
+            'status'=>'required',
+        ])->validate();
+        $updatedata = $request->all();
+        unset($updatedata['_token']);
+        date_default_timezone_set('Asia/Kolkata');
+        if(isset($request->id) && $request->id!='') 
+        {
+            $updatedata['updated_at'] = date("Y-m-d H:i:s",time());
+            $data = DB::table('blog_category')->where('id',$updatedata['id'])->update($updatedata);  
+        }
+        else
+        {
+            $updatedata['created_at'] = date("Y-m-d H:i:s",time());
+            $data = DB::table('blog_category')->insert($updatedata);
+        }
+        if($data)
+        {
+            return redirect('/admin/blog/category/list')->with('success','Category Added Successfully');
+        }
+        else
+        {
+            return redirect('/admin/blog/category/list')->with('error','Something went wrong! Category Not Added');
+        }
+
+    }
+
+    // public function UpdateBlog(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'title'=>'requred|max:255',
+    //         'description'=>'required',
+    //     ]);
+    //     $BlogData = Blog::find($request->id);
+    //     $BlogData->title = $request->title;
+    //     $BlogData->add_by = $request->add_by;
+    //     $BlogData->description = $request->description;
+    //     if($request->file('blog_image')!=null)
+    //     {
+    //         $name = time().rand(1,50).'.'.$request->file('blog_image')->extension();
+    //         $request->file('blog_image')->move(public_path('uploads/blogimages'), $name); 
+    //         $path = 'uploads/blogimages/'.$name; 
+    //         $BlogData->image_path = $path;
+    //     }
+    //     if($BlogData->save())
+    //     {
+    //         return redirect('/blog/list')->with('success','Blog Updated Successfully');
+    //     }
+    //     else
+    //     {
+    //         return redirect('/blog/list')->with('error','Something went wrong! Blog Not Update');
+    //     }
+
+    // }
+
+    public function DeleteBlogCategory(Request $request)
+    {
+      $delete = DB::table('blog_category')->where('id',$request->id)->delete();
+      return redirect('/admin/blog/category/list')->with('success','Category Deleted Successfully');
     }
 
     // public function getAllBlog(Request $request)

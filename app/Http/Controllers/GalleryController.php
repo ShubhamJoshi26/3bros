@@ -19,7 +19,7 @@ class GalleryController extends Controller
                     return $actionBtn;
                 })
                 ->addColumn('image',function($row){
-                    $src = URL::asset($row['thumbnail']);
+                    $src = URL::asset('public/'.$row['thumbnail']);
                     $imagetag = '<img src="'.$src.'" width="70px" height="70px">';
                     return $imagetag;
                 })

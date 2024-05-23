@@ -325,7 +325,7 @@
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
-                                        <h5><a href="/venue-details/{{$vn['id']}}">{{$vn['title']}}</a></h5>
+                                        <h5><a href="/venue-details/{{str_replace(' ','-',$vn['title'])}}">{{$vn['title']}}</a></h5>
                                     </div>
                                     <div class="trib-events-vanue">
                                         <h5><span>PAX</span> : {{$vn['capacity']}}</h5>
@@ -339,7 +339,7 @@
                                         <h5><span>Location</span> : {{$vn['address']}}</h5>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black read-more mt-15"
-                                        href="/venue-details/{{$vn['id']}}" title="">Read More</a>
+                                        href="/venue-details/{{str_replace(' ','-',$vn['title'])}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -519,7 +519,7 @@
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
                                                 title="FREE DECORATION"
-                                                href="images/portfolio/indian-wedding-gate-decoration-green-eucalyptus-background.png"
+                                                href="{{URL::asset('public/front/images/portfolio/indian-wedding-gate-decoration-green-eucalyptus-background.png')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -555,7 +555,7 @@
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
                                                 title="side-view-photographer-married-couple-1.jpg"
-                                                href="images/portfolio/side-view-photographer-married-couple-1.jpg"
+                                                href="{{URL::asset('public/front/images/portfolio/side-view-photographer-married-couple-1.jpg')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -587,7 +587,7 @@
                                     <div class="ttm-box-view-overlay ttm-portfolio-box-view-overlay">
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                                title="band-baja" href="images/portfolio/band-baja.jpg"
+                                                title="band-baja" href="{{URL::asset('public/front/images/portfolio/band-baja.jpg')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -621,7 +621,7 @@
                                     <div class="ttm-box-view-overlay ttm-portfolio-box-view-overlay">
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                                title="band-baja" href="images/portfolio/band-baja.jpg"
+                                                title="band-baja" href="{{URL::asset('public/front/images/portfolio/band-baja.jpg')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -658,7 +658,7 @@
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
                                                 title="cute-dj-woman-having-fun-playing-music-club-party"
-                                                href="images/portfolio/cute-dj-woman-having-fun-playing-music-club-party.jpg"
+                                                href="{{URL::asset('public/front/images/portfolio/cute-dj-woman-having-fun-playing-music-club-party.jpg')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -690,7 +690,7 @@
                                     <div class="ttm-box-view-overlay ttm-portfolio-box-view-overlay">
                                         <div class="ttm-media-link">
                                             <a class="ttm_prettyphoto ttm_image" data-gal="prettyPhoto[gallery1]"
-                                                title="invitation" href="images/portfolio/invitation.jpg"
+                                                title="invitation" href="{{URL::asset('public/front/images/portfolio/bridal-entry.jpg')}}"
                                                 data-rel="prettyPhoto">
                                                 <i class="ti ti-search"></i>
                                             </a>
@@ -1125,10 +1125,10 @@
                                             unique and we
                                             believe our services should be as well.</p>
                                     </div>
-                                    @if (session('success'))
-                                        <div class="alert alert-success m-3" role="alert">
+                                    @if (session('error'))
+                                        <div class="alert alert-error m-3" role="alert">
                                         <div  role="alert">
-                                                {{ session('success') }}
+                                                {{ session('error') }}
                                                 </div>
                                         </div>                      
                                     @endif
@@ -1164,6 +1164,7 @@
                                             <span class="ttm-form-control"><textarea class="text-area" name="message"
                                                     placeholder="Your Message:*" required="required"></textarea></span>
                                         </label>
+                                        <div class="g-recaptcha" data-sitekey="6LdCr9gpAAAAAEropxW5cwPSTiR6jDX9XvD29Flf"></div>
                                         <input name="submit" type="submit" value="Submit"
                                             class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-15"
                                             id="submit" title="Submit now">
@@ -1194,7 +1195,7 @@
                                 <div class="row row-equal-height">
                                     <div class="col-md-12 col-lg-6 ttm-featured-img-left">
                                         <div class="featured-thumbnail">
-                                            <a href="/blog-detail/{{$b['id']}}"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
+                                            <a href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
                                                     alt="image"></a>
                                         </div>
                                     </div>
@@ -1208,13 +1209,13 @@
                                                 </span>
                                             </div>
                                             <div class="featured-title ml-70">
-                                                <h5><a href="/blog-detail/{{$b['id']}}">{{$b['title']}}</a></h5>
+                                                <h5><a href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}">{{$b['title']}}</a></h5>
                                             </div>
                                             <div class="featured-desc">
-                                                <p class="res-991-mb-0">{!!$b['description']!!}</p>
+                                                <p class="res-991-mb-0">{!!substr($b['description'],0,100).'...'!!}</p>
                                             </div>
                                             <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-20 mb-15"
-                                                href="/blog-detail/{{$b['id']}}" title="">Read More</a>
+                                                href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}" title="">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1230,7 +1231,7 @@
                             <div
                                 class="featured-imagebox featured-imagebox-post ttm-box-view-top-image box-shadow1 ttm-bgcolor-white mb-30 res-1199-m-0">
                                 <div class="featured-thumbnail">
-                                    <a href="blog-details.html"><img class="img-fluid" src="{{URL::asset('public/'.$next['image_path'])}}"
+                                    <a href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}"><img class="img-fluid" src="{{URL::asset('public/'.$next['image_path'])}}"
                                             alt="image"></a>
                                 </div>
                                 <div class="featured-content featured-content-post">
@@ -1241,13 +1242,13 @@
                                         </span>
                                     </div>
                                     <div class="featured-title ml-70">
-                                        <h5><a href="blog-details.html">{{$next['title']}}</a></h5>
+                                        <h5><a href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}">{{$next['title']}}</a></h5>
                                     </div>
                                     <div class="featured-desc">
-                                        <p class="res-991-mb-0">{!!$next['description']!!}</p>
+                                        <p class="res-991-mb-0">{!!substr($next['description'],0,100).'...'!!}</p>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-10 mb-15"
-                                        href="#" title="">Read More</a>
+                                        href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>

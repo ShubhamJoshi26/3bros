@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\File;
 use DataTables;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -34,27 +35,14 @@ class BlogController extends Controller
     public function AddBlog()
     {
         $session = session()->all();
-        $category = Category::all()->toArray();
+        $category = DB::table('blog_category')->get();
         $option ='<option></option>';
         if(!empty($category))
         {
-           if(isset($session['siteid']) && $session['siteid']!='')
-           {
-            foreach($category as $cat)
-            {
-                if($cat['siteid']==$session['siteid'])
+                foreach(json_decode($category,true) as $cat)
                 {
-                    $option .= '<option value="'.$cat['category'].'">'.$cat['category'].'</option>';
+                    $option .= '<option value="'.$cat['title'].'">'.$cat['title'].'</option>';
                 }
-            }
-           }
-           else
-           {
-                foreach($category as $cat)
-                {
-                    $option .= '<option value="'.$cat['category'].'">'.$cat['category'].'</option>';
-                }
-           }
         }
         return view('admin/blog/add',['option'=>$option]);
     }
@@ -62,16 +50,16 @@ class BlogController extends Controller
     public function EditBlog(Request $request)
     {
         $blogs = Blog::find($request->id)->toArray();
-        $category = Category::all()->toArray();
+        $category = DB::table('blog_category')->get();
         $option ='<option></option>';
         if(!empty($category))
         {
             
-            foreach($category as $cat)
+            foreach(json_decode($category,true) as $cat)
             {
                 $select = '';
-                if($cat['category']==$blogs['category']){$select = "selected";}
-                $option .= '<option value="'.$cat['category'].'" '.$select.'>'.$cat['category'].'</option>';
+                if($cat['title']==$blogs['category']){$select = "selected";}
+                $option .= '<option value="'.$cat['title'].'" '.$select.'>'.$cat['title'].'</option>';
             }
         }
         if(!empty($blogs))

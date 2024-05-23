@@ -70,7 +70,7 @@ class Menu extends Model
             $mainlist .= (new static)->MenuTree('', $pr->sub_id, $pr->menuid, $pr->name, $pr->menu_url, 0);
         }
         $mainlist .= "</ul>";
-
+        
         return $mainlist;
     }
 
@@ -121,20 +121,23 @@ class Menu extends Model
 
                     $list .= '<li class="dropdown"><a href="' . $urlm . '" id = "menu_'.$pr->menuid.'">' . $pr->name . '</a>';
 
-                    $list .= "<ul class=''>";
+                   
 
                     $childthird = DB::table('menus')
                         ->where('sub_id', $pr->menuid)
                         ->where('status', '1')
                         ->get();
-
-                    foreach ($childthird as $pr3) {
+                    if(!empty($childthird->toArray()))
+                    {
+                         $list .= "<ul class=''>";
+                     foreach ($childthird as $pr3) {
                         $mwnue = (new static)->urlfind($pr3->menu_url);
                         $urlmn = ($mwnue) ? $pr3->menu_url : url('/') . '/' . $pr3->menu_url;
                         $list .= '<li><a href="' . $urlmn . '" id = "menu_'.$pr->menuid.'">' . $pr3->name . '</a></li>';
+                    } 
+                    $list .= "</ul>";
                     }
-
-                    $list .= "</ul></li>";
+                    $list .= "</li>";
 
                 }
             }

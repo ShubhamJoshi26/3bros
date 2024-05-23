@@ -138,7 +138,7 @@
 <p>For any grievances: In case of any complaints or grievances in relation to 3bros Platform, you may reach out to:</p>
 <p>Grievance Officer: Mrs Jyoti Agnihotri</p>
 <p>Phone: 9058112967</p>
-<p>Email: 3brosreviews@gmail.com</p>
+<p>Email: </p>
 <p>Address:  H1A/19, First Floor, Electronic City Metro Station, Sec 63, Noida, UP 201301</p>
 
 <p>You may provide the details or the communication link of any obscene or prohibited content to the above email ID. 3bros will take reasonable and practicable measures to remove or disable access to any obscene content from the 3bros Platform, within the timelines stipulated under applicable laws and regulations.</p>

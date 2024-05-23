@@ -88,7 +88,7 @@
                                         <h5>E-Mail</h5>
                                     </div>
                                     <div class="featured-desc">
-                                        <p><a href="mailto:sales@3bros.in">sales@3bros.in,</a><br><a href="mailto:3brosreviews@gmail.com">3brosreviews@gmail.com</a>
+                                        <p><a href="mailto:sales@3bros.in">sales@3bros.in,</a>
 </p>
                                     </div>
                                 </div>
@@ -116,10 +116,10 @@
                                     <h3 class="title">Get The Party Started</h3>
                                     <p>As the premier event planning company in the area. Each event and client is unique and we believe our services should be as well.</p>
                                 </div><!-- section title end -->
-                                @if (session('success'))
-                                        <div class="alert alert-success m-3" role="alert">
+                                @if (session('error'))
+                                        <div class="alert alert-error m-3" role="alert">
                                         <div  role="alert">
-                                                {{ session('success') }}
+                                                {{ session('error') }}
                                                 </div>
                                         </div>                      
                                     @endif
@@ -155,6 +155,7 @@
                                             <span class="ttm-form-control"><textarea class="text-area" name="message"
                                                     placeholder="Your Message:*" required="required"></textarea></span>
                                         </label>
+                                        <div class="g-recaptcha" data-sitekey="6LdCr9gpAAAAAEropxW5cwPSTiR6jDX9XvD29Flf"></div>
                                         <input name="submit" type="submit" value="Submit"
                                             class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-skincolor mt-15"
                                             id="submit" title="Submit now">

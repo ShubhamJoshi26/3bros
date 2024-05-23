@@ -53,8 +53,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="mt-10 ttm-service-description">
-                                <h3>{{strtoupper($venue['title'])}}</h3>
-                                {!!substr($venue['description'],0,200).'...'!!}
+                                <h3>{{strtoupper($venue[0]['title'])}}</h3>
+                                {!!substr($venue[0]['description'],0,200).'...'!!}
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                 <form id="contactform" class="row contactform wrap-form clearfix" method="post" action="{{route('submitenquiry')}}">
                                 @csrf
                                 <input type="hidden" id="type" name="type" value="booking">
-                                <input type="hidden" id="venue" name="venue" value="{{$venue['title']}}">
+                                <input type="hidden" id="venue" name="venue" value="{{$venue[0]['title']}}">
                                 <input type="hidden" id="message" name="message" value="for booking">
                                     <label class="col-md-6">
                                         <i class="ti ti-user"></i>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="mt-20 ttm-service-description">
                         <h4>Description</h4>
-                        {!!substr($venue['description'],201)!!}
+                        {!!substr($venue[0]['description'],201)!!}
                     </div>
                 </div>
                 <!-- Sidebar Start -->
@@ -133,7 +133,7 @@
                     <aside class="widget widget-nav-menu box-shadow">
                         <ul class="widget-menu">
                             @foreach($allvenue as $vn)
-                            <li><a href="/venue-details/{{$vn['id']}}">{{$vn['title']}}</a></li>
+                            <li><a href="/venue-details/{{str_replace(' ','-',$vn['title'])}}">{{$vn['title']}}</a></li>
                             @endforeach
                         </ul>
                     </aside>
@@ -187,7 +187,7 @@
                                 <div class="featured-bottom-content text-center featured-bottom-portfolio-content">
                                     <div class="featured-title">
                                         <h5 class="title-post">
-                                            <a href="/venue-details/{{$van['id']}}">{{$van['title']}}</a>
+                                            <a href="/venue-details/{{str_replace(' ','-',$van['title'])}}">{{$van['title']}}</a>
                                         </h5>
                                     </div>
                                 </div>

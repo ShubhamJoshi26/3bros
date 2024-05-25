@@ -325,7 +325,7 @@
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
-                                        <h5><a href="/venue-details/{{str_replace(' ','-',$vn['title'])}}">{{$vn['title']}}</a></h5>
+                                        <h5><a href="/venue/{{$vn['id']}}/{{$vn['customurl']}}">{{$vn['title']}}</a></h5>
                                     </div>
                                     <div class="trib-events-vanue">
                                         <h5><span>PAX</span> : {{$vn['capacity']}}</h5>
@@ -339,7 +339,7 @@
                                         <h5><span>Location</span> : {{$vn['address']}}</h5>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black read-more mt-15"
-                                        href="/venue-details/{{str_replace(' ','-',$vn['title'])}}" title="">Read More</a>
+                                        href="/venue/{{$vn['id']}}/{{$vn['customurl']}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -458,7 +458,7 @@
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
-                                        <h5><a href="/venue-details/{{$vn['id']}}">{{$vn['title']}}</a></h5>
+                                        <h5><a href="/venue/{{$vn['id']}}/{{$vn['customurl']}}">{{$vn['title']}}</a></h5>
                                     </div>
                                     <div class="trib-events-vanue">
                                         <h5><span>PAX</span> : {{$vn['capacity']}}</h5>
@@ -472,7 +472,7 @@
                                         <h5><span>Location</span> : {{$vn['address']}}</h5>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black read-more mt-15"
-                                        href="/venue-details/{{$vn['id']}}" title="">Read More</a>
+                                        href="/venue/{{$vn['id']}}/{{$vn['customurl']}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -1195,7 +1195,7 @@
                                 <div class="row row-equal-height">
                                     <div class="col-md-12 col-lg-6 ttm-featured-img-left">
                                         <div class="featured-thumbnail">
-                                            <a href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
+                                            <a href="/blog/{{$b['title']}}"><img class="img-fluid" src="{{URL::asset('public/'.$b['image_path'])}}"
                                                     alt="image"></a>
                                         </div>
                                     </div>
@@ -1209,13 +1209,13 @@
                                                 </span>
                                             </div>
                                             <div class="featured-title ml-70">
-                                                <h5><a href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}">{{$b['title']}}</a></h5>
+                                                <h5><a href="/blog/{{$b['title']}}">{{$b['title']}}</a></h5>
                                             </div>
                                             <div class="featured-desc">
                                                 <p class="res-991-mb-0">{!!substr($b['description'],0,100).'...'!!}</p>
                                             </div>
                                             <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-20 mb-15"
-                                                href="/blog-detail/{{str_replace(' ','-',strtolower($b['title']))}}" title="">Read More</a>
+                                                href="/blog/{{$b['title']}}" title="">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1231,7 +1231,7 @@
                             <div
                                 class="featured-imagebox featured-imagebox-post ttm-box-view-top-image box-shadow1 ttm-bgcolor-white mb-30 res-1199-m-0">
                                 <div class="featured-thumbnail">
-                                    <a href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}"><img class="img-fluid" src="{{URL::asset('public/'.$next['image_path'])}}"
+                                    <a href="/blog/{{$next['title']}}"><img class="img-fluid" src="{{URL::asset('public/'.$next['image_path'])}}"
                                             alt="image"></a>
                                 </div>
                                 <div class="featured-content featured-content-post">
@@ -1242,13 +1242,13 @@
                                         </span>
                                     </div>
                                     <div class="featured-title ml-70">
-                                        <h5><a href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}">{{$next['title']}}</a></h5>
+                                        <h5><a href="/blog/{{$next['title']}}">{{$next['title']}}</a></h5>
                                     </div>
                                     <div class="featured-desc">
                                         <p class="res-991-mb-0">{!!substr($next['description'],0,100).'...'!!}</p>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-sm ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black mt-10 mb-15"
-                                        href="/blog-detail/{{str_replace(' ','-',strtolower($next['title']))}}" title="">Read More</a>
+                                        href="/blog/{{$next['title']}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>

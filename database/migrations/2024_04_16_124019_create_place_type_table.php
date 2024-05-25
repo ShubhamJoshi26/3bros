@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('metadescription')->nullable();
             $table->enum('on_home_page',['yes','no'])->default('no');
             $table->timestamps();
+            $table->string('customurl')->nullable();
         });
     }
 

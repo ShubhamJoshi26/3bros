@@ -16,8 +16,9 @@ class FrontController extends Controller
     {
         $event = Events::take(5)->get()->toArray();
         $blog = Blog::orderBy('created_at','desc')->take(3)->get()->toArray();
-        $venue = PlaceType::where('category','like','%wedding%')->where('on_home_page','yes')->orderBy('position','asc')->get()->take(3)->toArray();
+        $venue = PlaceType::where('on_home_page','yes')->orderBy('position','asc')->get()->take(3)->toArray();
         $gallery = Gallery::take(6)->get();
+        $metadata['metatitle']= '';
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
         return view('index',compact('venue','event','blog','gallery','metadata'));
@@ -30,6 +31,7 @@ class FrontController extends Controller
         {
             $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
             $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+            $metadata['metatitle']= '';
             return view('venue_list',compact('venue','title','metadata'));
         }
         else
@@ -68,7 +70,7 @@ class FrontController extends Controller
     {
         if(isset($request->category) && $request->category!='')
         {
-            $bloglist = Blog::where('category',$request->category)->get();
+            $bloglist = Blog::where('category',$request->category)->orderBy('created_at','desc')->get();
             if(!empty($bloglist))
             {
                 $bloglist = $bloglist->toArray();
@@ -76,7 +78,7 @@ class FrontController extends Controller
         }
         else
         {
-            $bloglist = Blog::all();
+            $bloglist = Blog::orderBy('created_at','desc')->all();
             if(!empty($bloglist))
             {
                 $bloglist = $bloglist->toArray();
@@ -86,27 +88,28 @@ class FrontController extends Controller
         $blogcategory = DB::table('blog_category')->get();
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('blogs',compact('blogs','blogcategory','metadata'));
     }
     function blogDetails($title)
     {
-        $title = str_replace('-',' ',strtolower($title));
         $blogs = Blog::orderBy('created_at','desc')->get()->toArray();
-        $blog = Blog::where('title',$title)->get()->toArray();
+        $blog = Blog::where('customurl',$title)->get()->toArray();
         $blogcategory = DB::table('blog_category')->get();
-        $metadata['metakeywords']= $blog[0]['metatitle'];
+        $metadata['metatitle']= $blog[0]['metatitle'];
         $metadata['metadescription']= $blog[0]['metadescription'];
+        $metadata['metakeywords']= $blog[0]['metakeywords'];
         return view('blog-details',compact('blog','blogs','blogcategory','metadata'));
     }
-    function vanueDetails($id)
+    function vanueDetails($id,$title)
     {
-        $title = str_replace('-',' ',$id);
         $table = 'place_type';
         $images = ImageController::getAllUploadedFiles($id,$table);
-        $venue = PlaceType::where('title',$title)->get()->toArray();
+        $venue = PlaceType::where('customurl',$title)->get()->toArray();
         $allvenue = PlaceType::all()->toArray();
-        $metadata['metakeywords']= $venue[0]['metatitle'];;
+        $metadata['metatitle']= $venue[0]['metatitle'];;
         $metadata['metadescription']= $venue[0]['metadescription'];
+        $metadata['metakeywords']= $venue[0]['metakeywords'];
         return view('venue_details',compact('images','venue','allvenue','metadata'));
     }
     function banquetlist($title)
@@ -116,6 +119,7 @@ class FrontController extends Controller
         $venue = PlaceType::where('address','like',"%$location%")->get();
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('venue_list',compact('venue','title','metadata')); 
     }
     function allGallery()
@@ -123,54 +127,63 @@ class FrontController extends Controller
         $gallery = Gallery::all();
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('galley',compact('gallery','metadata'));
     }
     function aniversary()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('anniversary-celebration',compact('metadata'));
     }
     function birthday()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('wow-birthday-theme',compact('metadata'));
     }
     function whychoose()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('why-choose',compact('metadata'));
     }
     function bestparty()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('best-party',compact('metadata'));
     }
     function contactus()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('contact-us',compact('metadata'));
     }
     function privacy()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('privacy-policy',compact('metadata'));
     }
     function termandcondition()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('terms-and-condition',compact('metadata'));
     }
     function disclaimer()
     {
         $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
         return view('disclaimer',compact('metadata'));
     }
 }

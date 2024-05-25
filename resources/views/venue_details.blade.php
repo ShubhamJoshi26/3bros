@@ -133,7 +133,7 @@
                     <aside class="widget widget-nav-menu box-shadow">
                         <ul class="widget-menu">
                             @foreach($allvenue as $vn)
-                            <li><a href="/venue-details/{{str_replace(' ','-',$vn['title'])}}">{{$vn['title']}}</a></li>
+                            <li><a href="/venue/{{$vn['id']}}/{{$vn['customurl']}}">{{$vn['title']}}</a></li>
                             @endforeach
                         </ul>
                     </aside>
@@ -187,7 +187,7 @@
                                 <div class="featured-bottom-content text-center featured-bottom-portfolio-content">
                                     <div class="featured-title">
                                         <h5 class="title-post">
-                                            <a href="/venue-details/{{str_replace(' ','-',$van['title'])}}">{{$van['title']}}</a>
+                                            <a href="/venue/{{$van['id']}}/{{$van['customurl']}}">{{$van['title']}}</a>
                                         </h5>
                                     </div>
                                 </div>

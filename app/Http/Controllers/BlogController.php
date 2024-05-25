@@ -103,7 +103,9 @@ class BlogController extends Controller
         $BlogData->description = $request->description;
         $BlogData->metatitle = $request->metatitle;
         $BlogData->metadescription = $request->metadescription;
+        $BlogData->metakeywords = $request->metakeywords;
         $BlogData->category = $request->category;
+        $BlogData->customurl = $request->customurl;
         if($request->file('blog_image')!=null)
         {
             $name = time().rand(1,50).'.'.$request->file('blog_image')->extension();

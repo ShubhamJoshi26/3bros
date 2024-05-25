@@ -10,7 +10,7 @@
     <meta name="description" content="{{$metadata['metadescription']}}" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>#3Bros</title>
+    <title>{{$metadata['metatitle']}}</title>
 
     <!-- favicon icon -->
     <link rel="shortcut icon" href="{{URL::asset('public/front/images/favicon.png')}}" media="all" />

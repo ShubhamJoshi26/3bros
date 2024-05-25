@@ -84,9 +84,14 @@
                 }
                 ?>
                 <div class="col-12 col-lg-6">
-                  <label for="" class="form-label">Meta Keyword</label>
+                  <label for="" class="form-label">Meta Title</label>
                   <input type="text" required class="form-control" id="title" 
                   value="<?php if(isset($place['metatitle']) && $place['metatitle']!=''){echo $place['metatitle'];}?>" placeholder="Meta Title" name="metatitle">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Meta Keywords</label>
+                  <input type="text" required class="form-control" id="metakeywords" 
+                  value="<?php if(isset($place['metakeywords']) && $place['metakeywords']!=''){echo $place['metakeywords'];}?>" placeholder="Meta Keywords" name="metakeywords">
                 </div>
                 <div class="col-12 col-lg-6">
                   <label for="" class="form-label">Meta Description</label>
@@ -96,6 +101,11 @@
                 <div class="col-12 col-lg-12">
                   <label for="" class="form-label">Description</label>
                   <textarea class="texteditor" name="description" id="description"><?php if(isset($place) && $place['description']!=''){echo $place['description'];}?></textarea>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <label for="" class="form-label">Custom URL</label>
+                  <input type="text" required class="form-control" id="customurl" 
+                  value="<?php if(isset($place['customurl']) && $place['customurl']!=''){echo $place['customurl'];}?>" placeholder="Custom URL" name="customurl">
                 </div>
                 </div>
                 <div class="row">

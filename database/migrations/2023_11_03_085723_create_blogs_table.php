@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('metadescription',2000)->nullable();
             $table->string('siteid',20)->nullable();
             $table->string('category',2000)->nullable();
+            $table->string('customurl')->nullable();
             
         });
     }

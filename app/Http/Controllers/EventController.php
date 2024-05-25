@@ -58,8 +58,10 @@ class EventController extends Controller
         $EventData->description = $request->description;
         $EventData->metadescription = $request->metadescription;
         $EventData->metatitle = $request->metatitle;
+        $EventData->metakeywords = $request->metakeywords;
         $EventData->time = $request->time;
         $EventData->location = $request->location;
+        $EventData->customurl = $request->customurl;
         if($request->file('thumbnail')!=null)
         {
             $name = time().rand(1,50).'.'.$request->file('thumbnail')->extension();

@@ -68,9 +68,14 @@
                   value="<?php if(isset($event) && $event['price']!=''){echo $event['price'];}?>" placeholder="Ticket Price" name="price">
                 </div>
                 <div class="col-12 col-lg-6">
-                  <label for="" class="form-label">Meta Keyword</label>
+                  <label for="" class="form-label">Meta Title</label>
                   <input type="text" required class="form-control" id="title" 
                   value="<?php if(isset($event['metatitle']) && $event['metatitle']!=''){echo $event['metatitle'];}?>" placeholder="Meta Title" name="metatitle">
+                </div>
+                <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Meta Keywords</label>
+                  <input type="text" required class="form-control" id="metakeywords" 
+                  value="<?php if(isset($event['metakeywords']) && $event['metakeywords']!=''){echo $event['metakeywords'];}?>" placeholder="Meta Keywords" name="metakeywords">
                 </div>
                 <div class="col-12 col-lg-6">
                   <label for="" class="form-label">Meta Description</label>
@@ -80,6 +85,11 @@
                 <div class="col-12 col-lg-12">
                   <label for="" class="form-label">Description</label>
                   <textarea class="texteditor" name="description" id="description"><?php if(isset($event) && $event['description']!=''){echo $event['description'];}?></textarea>
+                </div>
+                <div class="col-6 col-lg-6">
+                  <label for="" class="form-label">Custom URL</label>
+                  <input type="text" required class="form-control" id="customurl" 
+                  value="<?php if(isset($event['customurl']) && $event['customurl']!=''){echo $event['customurl'];}?>" placeholder="Custom URL" name="customurl">
                 </div>
                 </div>
                 <div class="row">

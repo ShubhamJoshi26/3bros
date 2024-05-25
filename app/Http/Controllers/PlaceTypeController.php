@@ -92,6 +92,8 @@ class PlaceTypeController extends Controller
         $PlaceData->description = $request->description;
         $PlaceData->metatitle = $request->metatitle;
         $PlaceData->metadescription = $request->metadescription;
+        $PlaceData->metakeywords = $request->metakeywords;
+        $PlaceData->customurl = $request->customurl;
         $PlaceData->category = $category;
         $PlaceData->address = $request->address;
         $PlaceData->capacity = $request->capacity;
@@ -114,14 +116,7 @@ class PlaceTypeController extends Controller
             $table_name = 'place_type';
             $folder = 'place';
             $images = ImageController::uploadMultipleFiles($request,$item_id,$table_name,$folder);
-            if($images)
-            {
-                return redirect('/admin/place/list')->with('success','Place add successfully');
-            }
-            else
-            {
-                return redirect('/admin/place/list')->with('error','Something Went Wrong');
-            }
+            return redirect('/admin/place/list')->with('success','Place add successfully');
         }
         else
         {

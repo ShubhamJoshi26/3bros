@@ -63,8 +63,8 @@
                                 <ul class="ttm-recent-post-list">
                                     @foreach($blogs as $num=>$bg)
                                     <li class="ttm-recent-post-list-li clearfix">
-                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($bg['title']))}}"><img src="{{URL::asset('public/'.$bg['image_path'])}}" alt="blog-img"></a>
-                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($bg['title']))}}">{{$bg['title']}}</a>
+                                        <a href="/blog/{{$bg['customurl']}}"><img src="{{URL::asset('public/'.$bg['image_path'])}}" alt="blog-img"></a>
+                                        <a href="/blog/{{$bg['customurl']}}">{{$bg['title']}}</a>
                                         <span class="post-date">{{date('M d, Y',strtotime($bg['created_at']))}}</span>
                                     </li>
                                     @endforeach

@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title">
-                                        <h5><a href="/venue-details/{{str_replace(' ','-',$vn['title'])}}"> {{$vn['title']}}</a></h5>
+                                        <h5><a href="/venue/{{$vn['id']}}/{{$vn['customurl']}}"> {{$vn['title']}}</a></h5>
                                     </div>
                                     <div class="trib-events-vanue">
                                         <h5><span>PAX</span> : {{$vn['capacity']}}</h5>
@@ -81,7 +81,7 @@
                                         <h5><span>Location</span> : {{$vn['address']}}</h5>
                                     </div>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-fill ttm-btn-color-black read-more mt-15"
-                                        href="/venue-details/{{str_replace(' ','-',$vn['title'])}}" title="">Read More</a>
+                                        href="/venue/{{$vn['id']}}/{{$vn['customurl']}}" title="">Read More</a>
                                 </div>
                             </div>
                         </div>

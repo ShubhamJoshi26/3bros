@@ -107,8 +107,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/allvenue',[FrontController::class,'allVenues'])->name('allvenue');
     Route::post('/submitenquiry',[FrontController::class,'submitenquiry'])->name('submitenquiry');
     Route::get('/blogs',[FrontController::class,'allBlogs'])->name('allblogs');
-    Route::any('/blog-detail/{title}',[FrontController::class,'blogDetails']);
-    Route::any('/venue-details/{id}',[FrontController::class,'vanueDetails']);
+    Route::any('/blog/{title}',[FrontController::class,'blogDetails']);
+    Route::any('/venue/{id}/{title}',[FrontController::class,'vanueDetails']);
     Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);
     Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
 

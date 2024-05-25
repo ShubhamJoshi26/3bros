@@ -38,7 +38,7 @@
                                         <small class="month">{{date('M',strtotime($blog['created_at']))}}</small>
                                     </div>
                                     <div class="post-title ml-85 res-pt75-767">
-                                        <h5><a href="/blog-detail/{{str_replace(' ','-',strtolower($blog['title']))}}">{{$blog['title']}}</a> </h5>
+                                        <h5><a href="/blog/{{$blog['customurl']}}">{{$blog['title']}}</a> </h5>
                                     </div>
                                     <div class="post-meta ml-85 shape-rounded">
                                         <ul class="list-inline">
@@ -50,7 +50,7 @@
                                     <p class="pt-20">{!!substr($blog['description'],0,150).'...'!!}
                                     </p>
                                     <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-round ttm-btn-style-border ttm-btn-color-black mt-15 "
-                                        href="/blog-detail/{{str_replace(' ','-',strtolower($blog['title']))}}">Read More</a>
+                                        href="/blog/{{$blog['customurl']}}">Read More</a>
                                 </div>
                             </article>
                             @endforeach
@@ -103,8 +103,8 @@
                                 <ul class="ttm-recent-post-list">
                                     @foreach($blogs as $num=>$blog)
                                     <li class="ttm-recent-post-list-li clearfix">
-                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($blog['title']))}}"><img src="{{URL::asset('public/'.$blog['image_path'])}}" alt="blog-img"></a>
-                                        <a href="/blog-detail/{{str_replace(' ','-',strtolower($blog['title']))}}">{{$blog['title']}}</a>
+                                        <a href="/blog/{{$blog['customurl']}}"><img src="{{URL::asset('public/'.$blog['image_path'])}}" alt="blog-img"></a>
+                                        <a href="/blog/{{$blog['customurl']}}">{{$blog['title']}}</a>
                                         <span class="post-date">{{date('M d, Y',strtotime($blog['created_at']))}}</span>
                                     </li>
                                     @endforeach

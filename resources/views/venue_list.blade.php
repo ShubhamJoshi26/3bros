@@ -12,7 +12,7 @@
                         <div class="container">
                             <span><a title="Homepage" href="#"><i class="fa fa-home"></i>&nbsp;&nbsp;Home</a></span>
                             <span class="ttm-bread-sep ttm-textcolor-white"> &nbsp; ⁄ &nbsp;</span>
-                            <span class="ttm-textcolor-white">{{str_replace('-',' ',$title)}}</span>
+                            <span class="ttm-textcolor-white">{{ucwords(str_replace('-',' ',$title))}}</span>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <div class="col-lg-12">
                             <div class=" section-title clearfix">
                                 <h4>GREAT PROVIDE #3BROS</h4>
-                                <h2 class="title">{{str_replace('-',' ',$title)}}</h2>
+                                <h2 class="title">{{ucwords(str_replace('-',' ',$title))}}</h2>
                                 <div class="title-img"><img src="{{URL::asset('public/images/ds-1.png')}}" alt="underline-img"></div>
                             </div>
                         </div>

@@ -101,11 +101,22 @@ class FrontController extends Controller
         $metadata['metakeywords']= $blog[0]['metakeywords'];
         return view('blog-details',compact('blog','blogs','blogcategory','metadata'));
     }
-    function vanueDetails($id,$title)
+    function vanueDetails($title)
     {
         $table = 'place_type';
-        $images = ImageController::getAllUploadedFiles($id,$table);
         $venue = PlaceType::where('customurl',$title)->get()->toArray();
+        $images = ImageController::getAllUploadedFiles($venue[0]['id'],$table);
+        $allvenue = PlaceType::all()->toArray();
+        $metadata['metatitle']= $venue[0]['metatitle'];;
+        $metadata['metadescription']= $venue[0]['metadescription'];
+        $metadata['metakeywords']= $venue[0]['metakeywords'];
+        return view('venue_details',compact('images','venue','allvenue','metadata'));
+    }
+    function banquetDetails($location,$url)
+    {
+        $table = 'place_type';
+        $venue = PlaceType::where('customurl',$url)->get()->toArray();
+        $images = ImageController::getAllUploadedFiles($venue[0]['id'],$table);
         $allvenue = PlaceType::all()->toArray();
         $metadata['metatitle']= $venue[0]['metatitle'];;
         $metadata['metadescription']= $venue[0]['metadescription'];

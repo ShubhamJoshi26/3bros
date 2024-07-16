@@ -90,4 +90,29 @@ class Controller extends BaseController
         curl_close($ch);
         return json_encode($result);
     }
+    public function sendDataToTeleCrm($data)
+    {
+        $curl = curl_init();
+        $data = json_encode($data,true); 
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.telecrm.in/enterprise/664c921f18c25b7433e8f178/autoupdatelead',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>$data,
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: Bearer 4da40967-e616-45f4-9217-4f2962419a2e1718353799913:dfc53bc0-ebd7-42b4-b687-95fdd84b0a6d',
+            'Accept: application/json',
+            'Content-Type: application/json'
+        ),
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+        echo $response;
+    }
 }

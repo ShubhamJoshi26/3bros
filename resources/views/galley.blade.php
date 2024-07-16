@@ -32,18 +32,18 @@
                         <div class="col-lg-12">
                             <div class="ttm-tabs style2" data-effect="fadeIn">
                                 <ul class="tabs clearfix">
-                                    <li class="tab active"><a href="#" class="shape-round"> All </a></li>                                   
-                                    <li class="tab"><a href="#" class="shape-round">Birthdays</a></li>
-                                    <li class="tab"><a href="#" class="shape-round">Corporate</a></li>
-                                    <li class="tab"><a href="#" class="shape-round">Engagement</a></li>
-                                    <li class="tab"><a href="#" class="shape-round">Weddings</a></li>
-                                     <li class="tab"><a href="#" class="shape-round">Video</a></li>
+                                    <li class="tab active"><a href="javascript:void(0)" class="shape-round" onclick="getGallary($(this).text())"> All </a></li>                                   
+                                    <li class="tab"><a href="javascript:void(0)" onclick="getGallary($(this).text())" class="shape-round">Birthdays</a></li>
+                                    <li class="tab"><a href="javascript:void(0)" onclick="getGallary($(this).text())" class="shape-round">Corporate</a></li>
+                                    <li class="tab"><a href="javascript:void(0)" onclick="getGallary($(this).text())" class="shape-round">Engagement</a></li>
+                                    <li class="tab"><a href="javascript:void(0)" onclick="getGallary($(this).text())" class="shape-round">Weddings</a></li>
+                                    <li class="tab"><a href="javascript:void(0)" onclick="getGallary($(this).text())" class="shape-round">Video</a></li>
                                     
                                 </ul><!-- flat-tab end -->
                                 <div class="content-tab">
                                     <!-- content-inner -->
                                     <div class="content-inner active">
-                                        <div class="row pt-10  multi-columns-row ttm-boxes-spacing-0px  ">
+                                        <div class="row pt-10  multi-columns-row ttm-boxes-spacing-0px  " id="gal">
                                             @if(!empty($gallery))
                                                 @foreach($gallery as $gal)
                                                 <div class="ttm-box-col-wrapper col-lg-4 col-md-6">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FooterMenuController;
 use App\Http\Controllers\FrontController;
@@ -111,8 +112,9 @@ Route::group(['prefix' => 'admin'], function(){
     Route::any('/venue/{title}',[FrontController::class,'vanueDetails']);
     Route::any('/banquetlist/{title}',[FrontController::class,'banquetlist']);
     Route::any('/banquetlist/{location}/{url}',[FrontController::class,'banquetDetails']);
+    Route::any('/banquet/{url}',[FrontController::class,'banquetPageDetails']);
     Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
-
+    Route::get('/getGallary',[FrontController::class,'getGallary']);
 
     ////Static page routes
     Route::get('anniversary-celebration',[FrontController::class,'aniversary']);
@@ -123,3 +125,9 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('/privacy-policy',[FrontController::class,'privacy'])->name('privacy-policy');
     Route::get('/terms-and-condition',[FrontController::class,'termandcondition'])->name('terms-and-condition');
     Route::get('/disclaimer',[FrontController::class,'disclaimer'])->name('disclaimer');
+    Route::get('/coffee-date-package',[FrontController::class,'cofeedate'])->name('cofeedate');
+    Route::get('/gold-candle-light-dinner-package',[FrontController::class,'candlelight'])->name('candlelight');
+    Route::get('/mahabharat-sizzler',[FrontController::class,'mahabharat'])->name('mahabharat');
+    Route::get('/popular-candle-light-dinner-rs-1999',[FrontController::class,'popularcandel'])->name('popularcandel');
+    Route::get('/ring-ceremony-package',[FrontController::class,'ringceremony'])->name('ringceremony');
+    Route::get('/silver-candle-light-dinner-rs-2999',[FrontController::class,'silvercandel'])->name('silvercandel');

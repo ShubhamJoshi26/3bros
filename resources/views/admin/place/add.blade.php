@@ -119,6 +119,23 @@
             </form>
       </div>
         </div>
+        @if(isset($placeimage) && !empty($placeimage))
+    <div class="card">
+      <div class="card-body">
+            <div class="row">
+            @foreach($placeimage as $img)
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{URL::asset('public/'.$img['path'])}}" alt="Card image cap">
+              <div class="card-body">
+                <a href="/admin/gallery/image/delete?id={{$img['id']}}" class="btn btn-primary">Delete</a>
+              </div>
+            </div>
+            @endforeach
+            </div>
+      </div>
+    </div>
+    @endif
     </div>
 </div>
+
 @include('admin.layout.footer')

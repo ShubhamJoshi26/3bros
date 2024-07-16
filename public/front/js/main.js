@@ -550,3 +550,21 @@
     $(function () { jQuery(".img-fluid:not(.alignleft, .alignright, .slider_arrow, .auto_size)").attr("width", "100%") });
 
 })(jQuery);
+
+
+
+function getGallary(text)
+{
+    $.ajax({
+        url:"/getGallary",
+        type:'get',
+        data:{text:text},
+        success:function(res)
+        {
+            if(res!='')
+            {
+                $('#gal').html(res);
+            }
+        }
+    })
+}

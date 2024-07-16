@@ -9,6 +9,7 @@ use App\Models\Images;
 use App\Models\PlaceType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class FrontController extends Controller
 {
@@ -56,12 +57,23 @@ class FrontController extends Controller
         $venue = $request->venue;
         $mobile = $request->mobile;
         $message = $request->message;
+        $Occasion = $request->Occasion;
+        $date = $request->date;
         $nop = $request->nop??0;
         $type = $request->type??''; 
         $data = array('name'=>$name,'email'=>$email,'venue'=>$venue,'mobile'=>$mobile,'message'=>$message,'nop'=>$nop,'type'=>$type);
         if(DB::table('booking_enquiry')->insert($data))
         {
+            $crmdata['fields']['No Of Pax'] = $nop;
+            $crmdata['fields']['name'] = $name;
+            $crmdata['fields']['email'] = $email;
+            $crmdata['fields']['phone'] = $mobile;
+            $crmdata['fields']['Occasion Type'] = $Occasion;
+            $crmdata['fields']['Date'] = $date;
+            $crmdata['actions']['type'] = "SYSTEM_NOTE";
+            $crmdata['actions']['text'] = "Lead Source: Website";
             $sendmail = $this->sendClientMails($data);
+            $sendDataToCRM = $this->sendDataToTeleCrm($crmdata);
             return view('thankyou');
         }
         
@@ -117,7 +129,9 @@ class FrontController extends Controller
         $table = 'place_type';
         $venue = PlaceType::where('customurl',$url)->get()->toArray();
         $images = ImageController::getAllUploadedFiles($venue[0]['id'],$table);
-        $allvenue = PlaceType::all()->toArray();
+        $venuein = str_replace('banquets-in-','',strtolower($location));
+        $location = str_replace('-',' ',$venuein);
+        $allvenue  = PlaceType::where('address','like',"%$location%")->get();
         $metadata['metatitle']= $venue[0]['metatitle'];;
         $metadata['metadescription']= $venue[0]['metadescription'];
         $metadata['metakeywords']= $venue[0]['metakeywords'];
@@ -196,5 +210,115 @@ class FrontController extends Controller
         $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
         $metadata['metatitle']= '';
         return view('disclaimer',compact('metadata'));
+    }
+    function cofeedate()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('coffee-date-package',compact('metadata'));
+    }
+    function candlelight()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('gold-candle-light-dinner-package',compact('metadata'));
+    }
+    function mahabharat()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('mahabharat-sizzler',compact('metadata'));
+    }
+    function popularcandel()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('popular-candle-light-dinner-rs-1999',compact('metadata'));
+    }
+    function ringceremony()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('ring-ceremony-package',compact('metadata'));
+    }
+    function silvercandel()
+    {
+        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
+        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
+        $metadata['metatitle']= '';
+        return view('silver-candle-light-dinner-rs-2999',compact('metadata'));
+    }
+    function getGallary(Request $request)
+    {
+        if($request->text=='Birthdays')
+        {
+            $query = 'birthday';
+        }
+        elseif($request->text=='Corporate')
+        {
+            $query = 'office';
+        }
+        elseif($request->text=='Engagement')
+        {
+            $query = 'engagement';
+        }
+        elseif($request->text=='Weddings')
+        {
+            $query = 'wedding';
+        }
+        elseif($request->text=='Video')
+        {
+            $query = 'video';
+        }
+        else
+        {
+            $query = 'all';
+        }
+        $data = Gallery::where('description','like',"%$query%")->get();
+        if($query=='all')
+        {
+            $data = Gallery::all();
+        }
+        $html='';
+        if(!empty($data->toArray()))
+        {
+            foreach($data as $gal)
+            {
+                $html .= '<div class="ttm-box-col-wrapper col-lg-4 col-md-6">
+            <!-- featured-imagebox -->
+                <div class="featured-imagebox featured-imagebox-portfolio">
+                    <!-- featured-thumbnail-->
+                    <div class="featured-thumbnail">
+                        <a href="#"><img class="img-fluid"
+                                src="'.URL::asset('public/'.$gal->thumbnail).'" alt="image"></a>
+                    </div><!-- featured-thumbnail END-->
+                    <!-- ttm-box-view-overlay -->
+                    <div class="ttm-box-view-overlay">
+                        <div class="ttm-media-link">
+                            <a class="ttm_prettyphoto ttm_image"
+                                data-gal="prettyPhoto[gallery1]"
+                                title="Birthday Celebration"
+                                href="'.URL::asset('public/'.$gal->thumbnail).'"
+                                data-rel="prettyPhoto">
+                                <i class="ti ti-search"></i>
+                            </a>
+                        </div>
+                        <div class="featured-content featured-content-portfolio">
+                            <div class="featured-title">
+                                <h5><a href="#">'.$gal->title.'</a></h5>
+                            </div>
+                            
+                        </div>
+                    </div><!-- ttm-box-view-overlay end-->
+                </div><!-- featured-item -->
+            </div>';
+            }
+        }
+        echo $html;
     }
 }

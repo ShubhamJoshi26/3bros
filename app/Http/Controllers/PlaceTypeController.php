@@ -53,9 +53,11 @@ class PlaceTypeController extends Controller
                 $option .= '<option value="'.$cat['category'].'" '.$select.'>'.$cat['category'].'</option>';
             }
         }
+
         if(!empty($place))
         {
-            return view('admin/place/add',['place'=>$place,'option'=>$option]);
+            $placeimage = ImageController::getAllUploadedFiles($request->id,'place_type');
+            return view('admin/place/add',['place'=>$place,'option'=>$option,'placeimage'=>$placeimage]);
         }
         else
         {

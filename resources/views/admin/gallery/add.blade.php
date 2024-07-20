@@ -34,13 +34,47 @@
                                                                                   } ?>" placeholder="Place Title" name="title">
             </div>
             <div class="col-12 col-lg-6">
-              <label for="" class="form-label">Thumbnail</label>
+              <label for="" class="form-label">Thumbnail/Video</label>
               <input class="form-control" type="file" id="thumbnail" name="thumbnail">
             </div>
             <div class="col-12 col-lg-6">
               <label for="" class="form-label">Images</label>
               <input class="form-control" type="file" id="images" name="images[]" multiple>
             </div>
+            <div class="col-12 col-lg-6">
+              <label for="" class="form-label">Youtube Embaded Link</label>
+              <input class="form-control" type="text" id="youtube" name="youtube" value="<?php if (isset($gallery) && $gallery->youtube != '') {
+                                                    echo $gallery->youtube;
+                                                  } ?>">
+            </div>
+            <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Gallery Type</label>
+                  <select name="type" id="type" class="form-control select2">
+                    <option value="image" <?php if(isset($gallery) && $gallery->type == 'image') { 
+                      echo "selected='selected'"; 
+                      }; ?>>Images</option>
+                    <option value="video" <?php if(isset($gallery) && $gallery->category == 'video') { 
+                      echo "selected='selected'"; 
+                      } ?>>Video</option>
+                  </select>
+                </div>
+            <div class="col-12 col-lg-6">
+                  <label for="" class="form-label">Category</label>
+                  <select name="category" id="category" class="form-control select2">
+                    <option value="birthday" <?php if(isset($gallery) && $gallery->category == 'birthday') { 
+                      echo "selected='selected'"; 
+                      }; ?>>Birthday</option>
+                    <option value="corprate" <?php if(isset($gallery) && $gallery->category == 'corprate') { 
+                      echo "selected='selected'"; 
+                      } ?>>Corprate</option>
+                    <option value="engagement" <?php if(isset($gallery) && $gallery->category == 'engagement') { 
+                      echo "selected='selected'"; 
+                      } ?>>Engagement</option>
+                    <option value="wedding" <?php if(isset($gallery) && $gallery->category == 'wedding') { 
+                      echo "selected='selected'"; 
+                      } ?>>Wedding</option>
+                  </select>
+                </div>
             <!--  -->
             <div class="col-12 col-lg-12">
               <label for="" class="form-label">Description</label>

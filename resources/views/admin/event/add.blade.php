@@ -91,6 +91,16 @@
                   <input type="text" required class="form-control" id="customurl" 
                   value="<?php if(isset($event['customurl']) && $event['customurl']!=''){echo $event['customurl'];}?>" placeholder="Custom URL" name="customurl">
                 </div>
+                <div class="col-6 col-lg-6">
+                  <label for="" class="form-label">Client Name</label>
+                  <input type="text" required class="form-control" id="client_name" 
+                  value="<?php if(isset($event['client_name']) && $event['client_name']!=''){echo $event['client_name'];}?>" placeholder="Client Name" name="client_name">
+                </div>
+                <div class="col-6 col-lg-6">
+                  <label for="" class="form-label">Occasion</label>
+                  <input type="text" required class="form-control" id="occasion" 
+                  value="<?php if(isset($event['occasion']) && $event['occasion']!=''){echo $event['occasion'];}?>" placeholder="Occasion" name="occasion">
+                </div>
                 </div>
                 <div class="row">
                 <div class="col-12 col-lg-12"> &nbsp;

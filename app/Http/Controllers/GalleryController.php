@@ -59,6 +59,8 @@ class GalleryController extends Controller
         $Gallery->title = $req->title;
         $Gallery->description = $req->description;
         $Gallery->date = $req->date;
+        $Gallery->type = $req->type;
+        $Gallery->category = $req->category;
         if($req->hasFile('thumbnail'))
         {
             $title = str_replace(' ', '-', $req->title);

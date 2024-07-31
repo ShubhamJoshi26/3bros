@@ -568,3 +568,18 @@ function getGallary(text)
         }
     })
 }
+function getVideo(text)
+{
+    $.ajax({
+        url:"/getVideo",
+        type:'get',
+        data:{text:text},
+        success:function(res)
+        {
+            if(res!='')
+            {
+                $('#gal').html(res);
+            }
+        }
+    })
+}

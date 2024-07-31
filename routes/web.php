@@ -114,7 +114,9 @@ Route::group(['prefix' => 'admin'], function(){
     Route::any('/banquetlist/{location}/{url}',[FrontController::class,'banquetDetails']);
     Route::any('/banquet/{url}',[FrontController::class,'banquetPageDetails']);
     Route::get('galley/all',[FrontController::class,'allGallery'])->name('allgallery');
+    Route::get('video/all',[FrontController::class,'allVideo'])->name('allvideo');
     Route::get('/getGallary',[FrontController::class,'getGallary']);
+    Route::get('/getVideo',[FrontController::class,'getVideo']);
 
     ////Static page routes
     Route::get('anniversary-celebration',[FrontController::class,'aniversary']);

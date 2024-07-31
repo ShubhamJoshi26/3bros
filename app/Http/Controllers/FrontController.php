@@ -149,11 +149,19 @@ class FrontController extends Controller
     }
     function allGallery()
     {
-        $gallery = Gallery::all();
-        $metadata['metakeywords']= "largest banquet company, largest restaurant company, banquets for wedding in Noida, catering service in Noida, best farm house for destination weddings";
-        $metadata['metadescription']= "#3BROS is the top choice when it comes to fine dining, banquets, party halls, catering, restaurants, and farmhouses. Delhi NCR's largest banquet company has over 100 venue experiences in Sector 63, Noida.";
-        $metadata['metatitle']= '';
+        $gallery = Gallery::where('type','image')->get();
+        $metadata['metakeywords']= "";
+        $metadata['metadescription']= "Explore the gallery of #3BROS for restaurant dining, banquets, party halls, catering, farmhouse weddings, and events. Discover your perfect venue!";
+         $metadata['metatitle']= 'Gallery for #3BROS Restaurant |Banquets | Party Halls| Catering| Farmhouse Weddings ';
         return view('galley',compact('gallery','metadata'));
+    }
+    function allVideo()
+    {
+        $gallery = Gallery::where('type','video')->get();
+        $metadata['metakeywords']= "";
+        $metadata['metadescription']= "Explore the gallery of #3BROS for restaurant dining, banquets, party halls, catering, farmhouse weddings, and events. Discover your perfect venue!";
+         $metadata['metatitle']= 'Gallery for #3BROS Restaurant |Banquets | Party Halls| Catering| Farmhouse Weddings ';
+        return view('video',compact('gallery','metadata'));
     }
     function aniversary()
     {
@@ -271,15 +279,11 @@ class FrontController extends Controller
         {
             $query = 'wedding';
         }
-        elseif($request->text=='Video')
-        {
-            $query = 'video';
-        }
         else
         {
             $query = 'all';
         }
-        $data = Gallery::where('description','like',"%$query%")->get();
+        $data = Gallery::where('category',"$query")->where('type','image')->get();
         if($query=='all')
         {
             $data = Gallery::all();
@@ -317,6 +321,72 @@ class FrontController extends Controller
                     </div><!-- ttm-box-view-overlay end-->
                 </div><!-- featured-item -->
             </div>';
+            }
+        }
+        echo $html;
+    }
+    function getVideo(Request $request)
+    {
+        if($request->text=='Birthdays')
+        {
+            $query = 'birthday';
+        }
+        elseif($request->text=='Corporate')
+        {
+            $query = 'office';
+        }
+        elseif($request->text=='Engagement')
+        {
+            $query = 'engagement';
+        }
+        elseif($request->text=='Weddings')
+        {
+            $query = 'wedding';
+        }
+        else
+        {
+            $query = 'all';
+        }
+        $data = Gallery::where('category',"$query")->where('type','video')->get();
+        if($query=='all')
+        {
+            $data = Gallery::all();
+        }
+        $html='';
+        if(!empty($data->toArray()))
+        {
+            foreach($data as $gal)
+            {
+                $html .= '<div class="ttm-box-col-wrapper col-lg-4 col-md-6">
+                <!-- featured-imagebox -->
+                    <div class="featured-imagebox featured-imagebox-portfolio">
+                        <!-- featured-thumbnail-->
+                        <div class="featured-thumbnail">
+                            <a href="#">
+                            
+                                <iframe width="320" height="240" src="'.$gal->youtube.'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </a>
+                        </div><!-- featured-thumbnail END-->
+                        <!-- ttm-box-view-overlay -->
+                       <!-- <div class="ttm-box-view-overlay">
+                            <div class="ttm-media-link">
+                                <a class="ttm_prettyphoto ttm_image"
+                                    data-gal="prettyPhoto[gallery1]"
+                                    title="Birthday Celebration"
+                                    href="'.URL::asset('public/'.$gal->thumbnail).'"
+                                    data-rel="prettyPhoto">
+                                    <i class="ti ti-search"></i>
+                                </a>
+                            </div>
+                            <div class="featured-content featured-content-portfolio">
+                                <div class="featured-title">
+                                    <h5><a href="#">'.$gal->title.'</a></h5>
+                                </div>
+                                
+                            </div>
+                        </div> ttm-box-view-overlay end-->
+                    </div><!-- featured-item -->
+                </div>';
             }
         }
         echo $html;
